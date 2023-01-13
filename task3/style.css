@@ -1,8 +1,29 @@
+html {
+  font-size: 16px;
+}
+
+p {
+  font-size: 1.5em;
+}
 .title {
-  background-color: black;
+  background-color: #000000;
   color: white;
+  font-size: 46px;
 }
 
 .blue {
   color: blue !important;
+}
+
+.parent {
+  background-color: red;
+}
+
+.child {
+  background-color: blue;
+}
+
+.parent,
+.child {
+  width: 50%;
 }
