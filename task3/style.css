@@ -1,4 +1,8 @@
-h1 {
-    background-color: black;
-    color: white;
+.title {
+  background-color: black;
+  color: white;
+}
+
+.blue {
+  color: blue !important;
 }
