@@ -29,6 +29,7 @@ p {
 }
 
 .title {
+  margin-top: 50px;
   color: white;
   font-size: 46px;
   font-style: italic;
@@ -76,4 +77,10 @@ p {
   border-radius: 10px;
 
   background-color: #f1f1f1;
+}
+
+.position-scene div {
+  height: 100px;
+  background-color: rgba(0, 0, 0, .15);
+  margin-bottom: 10px;
 }
