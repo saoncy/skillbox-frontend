@@ -27,9 +27,9 @@ body {
   /* flex-wrap: wrap; */
 }
 
-.child:nth-child(2) {
-  /* margin: auto; */
-}
+/* .child:nth-child(2) {
+  margin: auto;
+} */
 
 /* .child:nth-child(2) {
   align-self: flex-start;
