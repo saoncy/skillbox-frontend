@@ -1,11 +1,46 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.parent {
+  padding: 30px;
+}
+
 .child {
   min-height: 150px;
+  flex: 0 0 5%;
   background-color: powderblue;
   margin: 10px;
   padding: 20px;
+  margin: auto;
 }
 
 .parent {
   display: flex;
-  padding: 30px;
+  flex-direction: row;
+  height: 100vh;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* flex-wrap: wrap; */
 }
+
+.child:nth-child(2) {
+  /* margin: auto; */
+}
+
+/* .child:nth-child(2) {
+  align-self: flex-start;
+  flex-grow: 0;     // describes how much element can stretch(grow) inside its parent
+  flex-shrink: 1;   // describes the ability of element to compress itself inside its parent
+                    // (0 - should be taken enough space to display all content without compressing it)
+  flex-basis: auto; // describes how much parent's space can be taken by child element
+                    // same thing below
+  flex: 0 1 auto;
+}
+
+.child:nth-child(4) {
+  align-self: flex-end;
+} */
