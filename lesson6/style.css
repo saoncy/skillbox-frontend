@@ -1,0 +1,11 @@
+.child {
+  min-height: 150px;
+  background-color: powderblue;
+  margin: 10px;
+  padding: 20px;
+}
+
+.parent {
+  display: flex;
+  padding: 30px;
+}
