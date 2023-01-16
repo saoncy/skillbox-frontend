@@ -219,6 +219,7 @@ html {
 .footer {
   height: 125px;
 }
+
 .footer-container {
   display: flex;
   align-items: center;
@@ -255,7 +256,7 @@ html {
   background-repeat: no-repeat;
   background-position: top left;
   background-size: auto 100%;
-  background-color: transparent
+  background-color: transparent;
 }
 
 .footer-social-item:not(:last-child) {
