@@ -116,3 +116,151 @@ html {
 .section-do-item:not(:last-child) {
   margin-right: 30px;
 }
+
+/* Clients */
+.clients-container {
+  padding-top: 90px;
+  padding-bottom: 100px;
+}
+
+.section-clients-list {
+  display: flex;
+  margin-top: 35px;
+}
+
+.section-clients-item {
+  flex: 1 1 33.33%;
+  padding-left: 30px;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 25px;
+}
+
+.section-clients-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.section-clients-testimonial {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.section-clients-user {
+  display: flex;
+  align-items: center;
+  padding-top: 25px;
+}
+
+.section-clients-avatar {
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+  border: 2px solid #3172b9;
+  border-radius: 50%;
+}
+
+.section-clients-user-info {
+  margin-left: 15px;
+}
+
+.section-clients-username {
+  margin-bottom: 5px;
+}
+
+/* Contacts */
+.contacts-container {
+  padding-top: 65px;
+  padding-bottom: 165px;
+}
+
+.section-contacts-list {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 115px;
+}
+
+.section-contacts-item {
+  flex: 1 1 33.33%;
+}
+
+.section-contacts-item:not(:last-child) {
+  margin-right: 125px;
+}
+
+.section-contacts-icon {
+  display: block;
+  margin-bottom: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: auto 100%;
+  background-color: transparent;
+}
+
+.contacts-icon-visit {
+  background-image: url(../img/visit.png);
+}
+
+.contacts-icon-phone {
+  background-image: url(../img/phone.png);
+}
+
+.contacts-icon-mail {
+  background-image: url(../img/mail.png);
+}
+
+.section-contacts-heading {
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+/* Footer */
+.footer {
+  height: 123px;
+}
+.footer-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+.footer-logo-img {
+  margin-right: 15px;
+}
+
+.footer-right {
+  display: flex;
+}
+
+.footer-nav-list {
+  display: flex;
+}
+
+.footer-nav-item:not(:last-child) {
+  margin-right: 35px;
+}
+
+.footer-social-list {
+  display: flex;
+}
+
+.footer-social-item {
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: auto 100%;
+  background-color: transparent
+}
+
+.footer-social-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.footer-social-icon-twitter {
+  background-image: url(../img/twitter.svg);
+}
