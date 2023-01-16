@@ -1,0 +1,33 @@
+body {
+  padding: 50px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.card {
+  border: 1px solid #bfbfbf;
+  width: 285px;
+  height: 400px;
+}
+
+.card-text {
+  padding: 20px;
+}
+
+.card-title {
+  margin-bottom: 20px;
+}
+
+.card-descr {
+  margin-bottom: 30px;
+}
+
+.card-btn {
+  width: 100px;
+  height: 30px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+}
