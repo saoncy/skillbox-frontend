@@ -75,13 +75,20 @@ height: 600px;
 }
 
 .section-special-offers-item {
-  flex: 1 1 50%;
+  outline: 1px solid #333;
+  width: 573px;
+  height: 258px;
+  margin-right: 24px;
+  flex: 1 1 auto;
 }
 
-.main-special-offer {
-  flex-basis: 100%;
+.section-special-offers-item:not(:nth-child(2n)) {
+  margin-bottom: 24px;
 }
 
+.section-special-offers-item:last-child {
+  margin-bottom: 0;
+}
 
 /* Services */
 .section-services-list {
@@ -93,6 +100,16 @@ height: 600px;
   width: 573px;
 }
 
-.section-services-item:not(:nth-child(2n)) {
+/* Advantages */
+.section-advantages-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-advantages-item {
+  width: 276px;
+}
+
+.section-services-item:not(:nth-child(4n)) {
   margin-right: 24px;
 }
