@@ -62,6 +62,9 @@ html {
   display: flex;
 }
 
+.nav-link {
+  margin-left: 45px;
+}
 
 /* Special Offers */
 .section-special-offers-list {
@@ -77,4 +80,19 @@ height: 600px;
 
 .main-special-offer {
   flex-basis: 100%;
+}
+
+
+/* Services */
+.section-services-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-services-item {
+  width: 573px;
+}
+
+.section-services-item:not(:nth-child(2n)) {
+  margin-right: 24px;
 }
