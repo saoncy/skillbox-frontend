@@ -32,7 +32,6 @@ html {
   padding-left: 40px;
 }
 
-
 /* Header */
 
 .header-top {
@@ -68,10 +67,10 @@ html {
 
 /* Special Offers */
 .section-special-offers-list {
-display: flex;
-flex-direction: column;
-flex-wrap: wrap;
-height: 600px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 600px;
 }
 
 .section-special-offers-item {
