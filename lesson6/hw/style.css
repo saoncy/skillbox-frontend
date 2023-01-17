@@ -119,3 +119,20 @@ html {
 .section-advantages-item:not(:nth-child(4n)) {
   margin-right: 22px;
 }
+
+/* Accomodation */
+
+.section-accomodation-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-accomodation-item {
+  margin-bottom: 22px;
+  width: 374px;
+  height: 440px;
+}
+
+.section-accomodation-item:not(:nth-child(3n)) {
+  margin-right: 24px;
+}
