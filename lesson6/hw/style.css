@@ -99,6 +99,7 @@ html {
 .section-services-item {
   width: 573px;
   height: 165px;
+  margin-bottom: 24px;
 }
 
 .section-services-item:not(:nth-child(2n)) {
@@ -114,6 +115,7 @@ html {
 .section-advantages-item {
   width: 276px;
   height: 276px;
+  margin-bottom: 24px;
 }
 
 .section-advantages-item:not(:nth-child(4n)) {
