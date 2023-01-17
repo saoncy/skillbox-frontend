@@ -113,4 +113,9 @@ html {
 
 .section-advantages-item {
   width: 276px;
+  height: 276px;
+}
+
+.section-advantages-item:not(:nth-child(4n)) {
+  margin-right: 22px;
 }
