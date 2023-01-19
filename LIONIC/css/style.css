@@ -318,19 +318,24 @@ html {
   color: #787878;
 }
 
+
 /* Contacts */
+.section-contacts {
+  border-bottom: 1px solid #e4e4e4;
+}
+
 .contacts-container {
-  padding-top: 85px;
-  padding-bottom: 95px;
+  padding-top: 70px;
+  padding-bottom: 165px;
 }
 
 .section-contacts-list {
   display: flex;
-  align-items: flex-start;
   margin-top: 45px;
 }
 
 .section-contacts-item {
+  display: inline-block;
   flex: 1 1 33.33%;
 }
 
@@ -362,8 +367,31 @@ html {
 }
 
 .section-contacts-heading {
-  display: block;
+  display: inline-block;
   margin-bottom: 40px;
+  font-size: 17px;
+  line-height: 25px;
+  color: #1c1c1c;
+  font-weight: 600;
+}
+
+.section-contacts-info {
+  font-size: 14px;
+  line-height: 25px;
+  color: #787878;
+  font-weight: 400;
+}
+
+.section-contacts-icon-visit {
+  width: 20px;
+}
+
+.section-contacts-icon-phone {
+  width: 26px;
+}
+
+.section-contacts-icon-mail {
+  width: 29px;
 }
 
 /* Footer */
@@ -383,12 +411,17 @@ html {
   align-items: center;
 }
 
-.footer-logo {
-  margin-right: 25px;
+.footer-copyrights {
+  margin-left: 25px;
+  font-size: 12px;
+  line-height: 17px;
+  color: #787878;
+  font-weight: 400;
 }
 
 .footer-right {
   display: flex;
+  justify-content: space-between;
 }
 
 .footer-nav-list {
@@ -401,6 +434,7 @@ html {
 
 .footer-social-list {
   display: flex;
+  margin-left: 55px;
 }
 
 .footer-social-item {
@@ -414,6 +448,34 @@ html {
   margin-right: 30px;
 }
 
+.footer-nav-link {
+  font-size: 14px;
+  letter-spacing: 0px;
+  line-height: 21px;
+  color: #787878;
+  font-weight: 400;
+}
+
 .footer-social-icon-twitter {
-  background-image: url(../img/twitter.svg);
+  display: inline-block;
+  background: url("../img/twitter.svg") center center no-repeat;
+  background-size: contain;
+  width: 22px;
+  height: 20px;
+  }
+
+.footer-social-icon-li {
+  display: inline-block;
+  background: url("../img/linkedin.svg") center center no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+}
+
+.footer-social-icon-mail {
+  display: inline-block;
+  background: url("../img/mail.svg") center center no-repeat;
+  background-size: contain;
+  width: 27px;
+  height: 20px;
 }
