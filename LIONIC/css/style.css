@@ -77,9 +77,27 @@ html {
   text-align: center;
 }
 
+.section-heading {
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 36px;
+  line-height: 1.3;
+  font-weight: 300;
+  color: #414141;
+}
+
+.section-descr {
+  margin-top: 0;
+  font-size: 16px;
+  line-height: 1.31;
+  color: #787878;
+  margin-top: 0;
+}
+
 /* Header */
 .header {
   height: 110px;
+  border-bottom: 1px solid #e4e4e4;
 }
 
 .header-container {
@@ -120,6 +138,7 @@ html {
 .section-hero {
   background: url("../img/hero.png") right center no-repeat;
   background-size: contain;
+  border-bottom: 1px solid #e4e4e4;
 }
 
 .hero-container {
@@ -180,8 +199,8 @@ html {
   padding-bottom: 100px;
 }
 
-.section-descr {
-  margin-top: 25px;
+.section-do {
+  border-bottom: 1px solid #e4e4e4;
 }
 
 .section-do-list {
@@ -190,17 +209,52 @@ html {
 }
 
 .section-do-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 30px;
   flex: 1 1 25%;
+  border: 1px solid #e4e4e4;
+  border-radius: 5px;
 }
 
 .section-do-item:not(:last-child) {
   margin-right: 30px;
 }
 
+.section-do-icon {
+  margin-bottom: 30px;
+}
+
+.section-do-item-heading {
+  margin-bottom: 18px;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 600;
+  color: #1c1c1c;
+}
+
+.section-do-item-descr {
+  margin-top: 0;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 300;
+  text-align: center;
+  color: #787878
+}
+
 /* Clients */
 .clients-container {
   padding-top: 90px;
   padding-bottom: 100px;
+}
+
+.section-clients-heading {
+  margin-bottom: 45px;
+}
+
+.section-clients {
+  border-bottom: 1px solid #e4e4e4;
 }
 
 .section-clients-list {
@@ -210,10 +264,12 @@ html {
 
 .section-clients-item {
   flex: 1 1 33.33%;
-  padding-left: 30px;
-  padding-top: 50px;
-  padding-right: 30px;
-  padding-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px 35px 30px 35px;
+  border: 1px solid #6b6b6b;
+  border-radius: 5px;
 }
 
 .section-clients-item:not(:last-child) {
@@ -222,13 +278,18 @@ html {
 
 .section-clients-testimonial {
   margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
+  font-size: 14px;
+  line-height: 25px;
+  font-weight: 400;
+  color: #787878;
 }
 
 .section-clients-user {
   display: flex;
   align-items: center;
-  padding-top: 25px;
+  padding-top: 28px;
+  border-top: 1px solid #e9e9e9;
 }
 
 .section-clients-avatar {
@@ -245,6 +306,16 @@ html {
 
 .section-clients-username {
   margin-bottom: 5px;
+  font-size: 17px;
+  line-height: 25px;
+  font-weight: 600;
+  color: #1c1c1c;
+}
+
+.section-clients-user-descr {
+  font-size: 14px;
+  line-height: 25px;
+  color: #787878;
 }
 
 /* Contacts */
