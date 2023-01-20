@@ -70,7 +70,14 @@ html {
 }
 
 .section-heading {
-  padding-left: 40px;
+  margin-top: 70px;
+  margin-left: 40px;
+  font-family: 'Muller';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 40px;
+  color: #333333;
 }
 
 .btn {
@@ -169,10 +176,25 @@ html {
 }
 
 .section-special-offers-item {
+  margin-right: 24px;
+  display: flex;
+  flex-direction: column;
   width: 573px;
   height: 258px;
-  margin-right: 24px;
-  flex: 1 1 auto;
+  padding-top: 40px;
+  padding-left: 45px;
+  padding-bottom: 40px;
+  border-radius: 15px;
+}
+
+.first-special-offer {
+  background: url("/LAGOONA/img/Rectangle\ 15.png") left top no-repeat;
+  background-size: contain;
+}
+
+.second-special-offer {
+  background: url("/LAGOONA/img/Rectangle\ 14.png") left top no-repeat;
+  background-size: contain;
 }
 
 .section-special-offers-item:not(:nth-child(2n)) {
@@ -182,6 +204,53 @@ html {
 .section-special-offers-item:last-child {
   margin-bottom: 0;
   margin-right: 0;
+}
+
+.section-special-offers-item-content {
+  width: 420px;
+  height: 178px;
+}
+
+.section-special-offers-item-heading {
+  font-family: 'Muller';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 40px;
+  color: #ffffff;
+}
+
+.big-special-offer {
+  flex-basis: 100%;
+  background: url("/LAGOONA/img/33\ 1.png") left top no-repeat;
+  background-size: contain;
+  padding-top: 212px;
+}
+
+.big-special-offer-heading {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 60px;
+}
+
+.section-special-offers-item-price {
+  margin-top: 15px;
+  margin-bottom: 47px;
+  font-family: 'Muller';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  color: #e1e1e1;
+}
+
+.link {
+  font-family: 'Muller';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  color: #F0BF5F;
 }
 
 /* Services */
