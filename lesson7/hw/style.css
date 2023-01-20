@@ -1,41 +1,41 @@
 /* open-sans-300 - latin_cyrillic */
 @font-face {
-  font-family: 'Muller';
+  font-family: "Muller";
   font-style: normal;
   font-weight: 300;
-  src: local(''),
-       url('/LAGOONA/fonts/MullerLight.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('/LAGOONA/fonts/MullerLight.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: local(""), url("/LAGOONA/fonts/MullerLight.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/LAGOONA/fonts/MullerLight.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* open-sans-300 - latin_cyrillic */
 @font-face {
-  font-family: 'Muller';
+  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
-  src: local(''),
-       url('/LAGOONA/fonts/MullerRegular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('/LAGOONA/fonts/MullerRegular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: local(""), url("/LAGOONA/fonts/MullerRegular.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/LAGOONA/fonts/MullerRegular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* open-sans-300 - latin_cyrillic */
 @font-face {
-  font-family: 'Muller';
+  font-family: "Muller";
   font-style: normal;
   font-weight: 500;
-  src: local(''),
-       url('/LAGOONA/fonts/MullerMedium.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('/LAGOONA/fonts/MullerMedium.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: local(""), url("/LAGOONA/fonts/MullerMedium.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/LAGOONA/fonts/MullerMedium.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* open-sans-300 - latin_cyrillic */
 @font-face {
-  font-family: 'Muller';
+  font-family: "Muller";
   font-style: normal;
   font-weight: 700;
-  src: local(''),
-       url('/LAGOONA/fonts/MullerBold.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('/LAGOONA/fonts/MullerBold.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: local(""), url("/LAGOONA/fonts/MullerBold.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/LAGOONA/fonts/MullerBold.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 * {
@@ -57,8 +57,8 @@ img {
 }
 
 html {
-  font-family: 'Muller', sans-serif;
-  background-color: #E5E5E5;;
+  font-family: "Muller", sans-serif;
+  background-color: #e5e5e5;
 }
 
 .container {
@@ -72,7 +72,7 @@ html {
 .section-heading {
   margin-top: 70px;
   margin-left: 40px;
-  font-family: 'Muller';
+  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
@@ -82,14 +82,14 @@ html {
 
 .btn {
   padding: 13px 20px;
-  border: 1px solid #CC9933;
+  border: 1px solid #cc9933;
   border-radius: 10px;
-  font-family: 'Muller';
+  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 16px;
-  color: #CC9933;
+  color: #cc9933;
 }
 
 /* Header */
@@ -103,7 +103,7 @@ html {
 
 .header-contact-link {
   margin-left: 40px;
-  font-family: 'Muller';
+  font-family: "Muller";
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -126,12 +126,12 @@ html {
 }
 
 .header-account-link {
-  font-family: 'Muller';
+  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 16px;
-  color: #CC9933;
+  color: #cc9933;
 }
 
 .nav {
@@ -140,7 +140,7 @@ html {
   justify-content: space-between;
   margin-top: 30px;
   height: 70px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 15px;
 }
 
@@ -150,7 +150,7 @@ html {
 
 .nav-link {
   margin-left: 45px;
-  font-family: 'Muller';
+  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -212,7 +212,7 @@ html {
 }
 
 .section-special-offers-item-heading {
-  font-family: 'Muller';
+  font-family: "Muller";
   font-style: normal;
   font-weight: 700;
   font-size: 40px;
@@ -236,7 +236,7 @@ html {
 .section-special-offers-item-price {
   margin-top: 15px;
   margin-bottom: 47px;
-  font-family: 'Muller';
+  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -245,12 +245,12 @@ html {
 }
 
 .link {
-  font-family: 'Muller';
+  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 16px;
-  color: #F0BF5F;
+  color: #f0bf5f;
 }
 
 /* Services */
