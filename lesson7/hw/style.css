@@ -3,9 +3,9 @@
   font-family: "Muller";
   font-style: normal;
   font-weight: 400;
-  src: local(""), url("/LAGOONA/fonts/MullerLight.woff2") format("woff2"),
+  src: local(""), url("/LAGOONA/fonts/MullerRegular.woff2") format("woff2"),
   /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url("/LAGOONA/fonts/MullerLight.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url("/LAGOONA/fonts/MullerRegular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* open-sans-300 - latin_cyrillic */
@@ -13,9 +13,9 @@
   font-family: "Muller";
   font-style: normal;
   font-weight: 500;
-  src: local(""), url("/LAGOONA/fonts/MullerRegular.woff2") format("woff2"),
+  src: local(""), url("/LAGOONA/fonts/MullerMedium.woff2") format("woff2"),
   /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url("/LAGOONA/fonts/MullerRegular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url("/LAGOONA/fonts/MullerMedium.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* open-sans-300 - latin_cyrillic */
