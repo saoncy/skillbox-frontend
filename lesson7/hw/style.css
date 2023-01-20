@@ -2,20 +2,10 @@
 @font-face {
   font-family: "Muller";
   font-style: normal;
-  font-weight: 300;
-  src: local(""), url("/LAGOONA/fonts/MullerLight.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("/LAGOONA/fonts/MullerLight.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-
-/* open-sans-300 - latin_cyrillic */
-@font-face {
-  font-family: "Muller";
-  font-style: normal;
   font-weight: 400;
-  src: local(""), url("/LAGOONA/fonts/MullerRegular.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("/LAGOONA/fonts/MullerRegular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: local(""), url("/LAGOONA/fonts/MullerLight.woff2") format("woff2"),
+  /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url("/LAGOONA/fonts/MullerLight.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* open-sans-300 - latin_cyrillic */
@@ -23,9 +13,9 @@
   font-family: "Muller";
   font-style: normal;
   font-weight: 500;
-  src: local(""), url("/LAGOONA/fonts/MullerMedium.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("/LAGOONA/fonts/MullerMedium.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  src: local(""), url("/LAGOONA/fonts/MullerRegular.woff2") format("woff2"),
+  /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url("/LAGOONA/fonts/MullerRegular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* open-sans-300 - latin_cyrillic */
@@ -58,7 +48,7 @@ img {
 
 html {
   font-family: "Muller", sans-serif;
-  background-color: #e5e5e5;
+  background-color: #eaeaea;
 }
 
 .container {
@@ -72,6 +62,7 @@ html {
 .section-heading {
   margin-top: 70px;
   margin-left: 40px;
+  margin-bottom: 20px;
   font-family: "Muller";
   font-style: normal;
   font-weight: 400;
@@ -90,6 +81,15 @@ html {
   font-size: 16px;
   line-height: 16px;
   color: #cc9933;
+}
+
+.link {
+  font-family: "Muller";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  color: #f0bf5f;
 }
 
 /* Header */
@@ -172,7 +172,7 @@ html {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 600px;
+  height: 540px;
 }
 
 .section-special-offers-item {
@@ -244,13 +244,14 @@ html {
   color: #e1e1e1;
 }
 
-.link {
-  font-family: "Muller";
+/* About Us */
+.section-about-us-descr {
+  width: 900px;
+  font-family: 'Muller';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 16px;
-  color: #f0bf5f;
+  line-height: 200%;
 }
 
 /* Services */
@@ -262,12 +263,45 @@ html {
 
 .section-services-item {
   width: 573px;
-  height: 165px;
+  height: 330px;
   margin-bottom: 24px;
+  border-radius: 15px;
+  background-color: #ffffff;
 }
 
 .section-services-item:not(:nth-child(2n)) {
   margin-right: 24px;
+}
+
+.section-services-img {
+  display: inline-block;
+  height: 165px;
+}
+
+.section-services-item-content {
+  margin-top: 26px;
+  margin-left: 45px;
+  margin-bottom: 35px;
+  margin-right: 126px;
+  width: 402px;
+  height: 104px;
+}
+
+
+.link-services {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 200%;
+  color: #CC9933;
+}
+
+.section-services-item-descr {
+  margin: 0;
+  font-family: 'Muller';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 200%;
 }
 
 /* Advantages */
