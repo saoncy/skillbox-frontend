@@ -268,7 +268,7 @@ html {
   flex-direction: column;
   justify-content: space-between;
   padding: 50px 35px 30px 35px;
-  border: 1px solid #6b6b6b;
+  border: 1px solid #e4e4e4;
   border-radius: 5px;
 }
 
@@ -406,7 +406,8 @@ html {
   height: 100%;
 }
 
-.footer-left {
+.footer-left,
+.footer-right {
   display: flex;
   align-items: center;
 }
@@ -416,12 +417,6 @@ html {
   font-size: 12px;
   line-height: 17px;
   color: #787878;
-  font-weight: 400;
-}
-
-.footer-right {
-  display: flex;
-  justify-content: space-between;
 }
 
 .footer-nav-list {
@@ -434,6 +429,7 @@ html {
 
 .footer-social-list {
   display: flex;
+  align-items: center;
   margin-left: 55px;
 }
 
@@ -456,26 +452,30 @@ html {
   font-weight: 400;
 }
 
-.footer-social-icon-twitter {
-  display: inline-block;
-  background: url("../img/twitter.svg") center center no-repeat;
+.footer-social-icon {
+  display: inline-block;;
   background-size: contain;
-  width: 22px;
-  height: 20px;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-position: center center;
+}
+
+.footer-social-icon-twitter {
+  background-image: url("../img/twitter.svg");
+  width: 15px;
+  height: 18px;
+  transform: translateY(1px);
   }
 
 .footer-social-icon-li {
-  display: inline-block;
-  background: url("../img/linkedin.svg") center center no-repeat;
-  background-size: contain;
-  width: 20px;
-  height: 20px;
+  background-image: url("../img/linkedin.svg");
+  width: 18px;
+  height: 19px;
+  transform: translateY(-1px);
 }
 
 .footer-social-icon-mail {
-  display: inline-block;
-  background: url("../img/mail.svg") center center no-repeat;
-  background-size: contain;
-  width: 27px;
-  height: 20px;
+  background-image: url("../img/mail.svg");
+  width: 24px;
+  height: 17px;
 }
