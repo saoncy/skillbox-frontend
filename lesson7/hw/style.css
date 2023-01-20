@@ -1,0 +1,235 @@
+/* open-sans-300 - latin_cyrillic */
+@font-face {
+  font-family: 'Muller';
+  font-style: normal;
+  font-weight: 300;
+  src: local(''),
+       url('/LAGOONA/fonts/MullerLight.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/LAGOONA/fonts/MullerLight.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* open-sans-300 - latin_cyrillic */
+@font-face {
+  font-family: 'Muller';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('/LAGOONA/fonts/MullerRegular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/LAGOONA/fonts/MullerRegular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* open-sans-300 - latin_cyrillic */
+@font-face {
+  font-family: 'Muller';
+  font-style: normal;
+  font-weight: 500;
+  src: local(''),
+       url('/LAGOONA/fonts/MullerMedium.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/LAGOONA/fonts/MullerMedium.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* open-sans-300 - latin_cyrillic */
+@font-face {
+  font-family: 'Muller';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''),
+       url('/LAGOONA/fonts/MullerBold.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/LAGOONA/fonts/MullerBold.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+html {
+  font-family: 'Muller', sans-serif;
+  background-color: #E5E5E5;;
+}
+
+.container {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.section-heading {
+  padding-left: 40px;
+}
+
+.btn {
+  padding: 13px 20px;
+  border: 1px solid #CC9933;
+  border-radius: 10px;
+  font-family: 'Muller';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  color: #CC9933;
+}
+
+/* Header */
+
+.header-top {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  height: 54px;
+}
+
+.header-contact-link {
+  margin-left: 40px;
+  font-family: 'Muller';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  color: #666666;
+}
+
+.header-account-section {
+  margin-left: auto;
+  display: flex;
+}
+
+.header-account-arrow {
+  margin-right: 5px;
+  background: url("/LAGOONA/img/icons/keyboard_tab.svg") left center no-repeat;
+  background-size: cover;
+  width: 21px;
+  height: 12px;
+  transform: translateY(1px);
+}
+
+.header-account-link {
+  font-family: 'Muller';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  color: #CC9933;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  height: 70px;
+  background: #FFFFFF;
+  border-radius: 15px;
+}
+
+.nav-list {
+  display: flex;
+}
+
+.nav-link {
+  margin-left: 45px;
+  font-family: 'Muller';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  color: #666666;
+}
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 45px;
+}
+
+.header-nav-btn:not(:last-child) {
+  margin-right: 40px;
+}
+
+/* Special Offers */
+.section-special-offers-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 600px;
+}
+
+.section-special-offers-item {
+  width: 573px;
+  height: 258px;
+  margin-right: 24px;
+  flex: 1 1 auto;
+}
+
+.section-special-offers-item:not(:nth-child(2n)) {
+  margin-bottom: 24px;
+}
+
+.section-special-offers-item:last-child {
+  margin-bottom: 0;
+  margin-right: 0;
+}
+
+/* Services */
+.section-services-list {
+  display: flex;
+  flex-wrap: wrap;
+  height: 744px;
+}
+
+.section-services-item {
+  width: 573px;
+  height: 165px;
+  margin-bottom: 24px;
+}
+
+.section-services-item:not(:nth-child(2n)) {
+  margin-right: 24px;
+}
+
+/* Advantages */
+.section-advantages-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-advantages-item {
+  width: 276px;
+  height: 276px;
+  margin-bottom: 24px;
+}
+
+.section-advantages-item:not(:nth-child(4n)) {
+  margin-right: 22px;
+}
+
+/* Accomodation */
+
+.section-accomodation-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-accomodation-item {
+  margin-bottom: 22px;
+  width: 374px;
+  height: 440px;
+}
+
+.section-accomodation-item:not(:nth-child(3n)) {
+  margin-right: 24px;
+}
