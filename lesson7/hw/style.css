@@ -72,6 +72,7 @@ html {
 }
 
 .btn {
+  display: inline-block;
   padding: 13px 20px;
   border: 1px solid #cc9933;
   border-radius: 10px;
@@ -258,7 +259,6 @@ html {
 .section-services-list {
   display: flex;
   flex-wrap: wrap;
-  height: 684px;
 }
 
 .section-services-item {
@@ -342,8 +342,95 @@ html {
   margin-bottom: 22px;
   width: 374px;
   height: 440px;
+  background: #ffffff;
+  border-radius: 15px;
 }
 
 .section-accomodation-item:not(:nth-child(3n)) {
   margin-right: 24px;
+}
+
+.section-accomodation-item-content {
+  height: 223px;
+  padding: 32px 45px 45px 45px;
+}
+
+.accomodation-info-top {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.accomodation-info-price-section {
+  display: flex;
+  align-items: center;
+}
+
+.accomodation-price {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 4px;
+}
+
+.price-start {
+  font-family: 'Muller';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  color: #999999;
+}
+
+.price-value {
+  font-family: 'Muller';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.price-per-night {
+  font-family: 'Muller';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.accomodation-title {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-family: 'Muller';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.accomodation-info {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-family: 'Muller';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  color: #999999;
+}
+
+
+.all-accomodations {
+  background: url("/LAGOONA/img/41.png") center center no-repeat;
+  background-size: contain
+}
+.link-accomodation {
+  margin: 373px 54px 27px 54px;
+  display: inline-block;
+  font-family: 'Muller';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 200%;
+  color: #FFFFFF;
 }
