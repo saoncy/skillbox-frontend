@@ -93,6 +93,10 @@ html {
   color: #f0bf5f;
 }
 
+.rectangle-arrow {
+  transform: translateY(2px);
+}
+
 /* Header */
 
 .header-top {
@@ -243,6 +247,10 @@ html {
   color: #e1e1e1;
 }
 
+.offer-arrow {
+  transform: translateY(5px);
+}
+
 /* About Us */
 .section-about-us-descr {
   width: 900px;
@@ -290,10 +298,6 @@ html {
   font-size: 20px;
   line-height: 200%;
   color: #cc9933;
-}
-
-.rectangle-arrow {
-  transform: translateY(2px);
 }
 
 .section-services-item-descr {
