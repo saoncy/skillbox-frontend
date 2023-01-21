@@ -258,7 +258,7 @@ html {
 .section-services-list {
   display: flex;
   flex-wrap: wrap;
-  height: 744px;
+  height: 684px;
 }
 
 .section-services-item {
@@ -311,13 +311,24 @@ html {
 }
 
 .section-advantages-item {
+  margin-bottom: 24px;
   width: 276px;
   height: 276px;
-  margin-bottom: 24px;
+  padding: 40px 42px 32px 45px;
+  background: #ffffff;
+  border-radius: 15px;
 }
 
 .section-advantages-item:not(:nth-child(4n)) {
   margin-right: 22px;
+}
+
+.section-advantages-descr {
+  font-family: 'Muller';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 200%;
 }
 
 /* Accomodation */
