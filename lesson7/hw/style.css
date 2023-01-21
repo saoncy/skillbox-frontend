@@ -4,8 +4,8 @@
   font-style: normal;
   font-weight: 400;
   src: local(""), url("/LAGOONA/fonts/MullerRegular.woff2") format("woff2"),
-  /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url("/LAGOONA/fonts/MullerRegular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/LAGOONA/fonts/MullerRegular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* open-sans-300 - latin_cyrillic */
@@ -14,8 +14,8 @@
   font-style: normal;
   font-weight: 500;
   src: local(""), url("/LAGOONA/fonts/MullerMedium.woff2") format("woff2"),
-  /* Chrome 26+, Opera 23+, Firefox 39+ */
-    url("/LAGOONA/fonts/MullerMedium.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/LAGOONA/fonts/MullerMedium.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* open-sans-300 - latin_cyrillic */
@@ -118,15 +118,13 @@ html {
 }
 
 .header-account-arrow {
-  margin-right: 5px;
-  background: url("/LAGOONA/img/icons/keyboard_tab.svg") left center no-repeat;
-  background-size: cover;
-  width: 21px;
-  height: 12px;
-  transform: translateY(1px);
+  margin-right: 7px;
+  transform: translateY(-2px);
 }
 
 .header-account-link {
+  display: flex;
+  align-items: center;
   font-family: "Muller";
   font-style: normal;
   font-weight: 400;
@@ -248,7 +246,7 @@ html {
 /* About Us */
 .section-about-us-descr {
   width: 900px;
-  font-family: 'Muller';
+  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -287,17 +285,20 @@ html {
   height: 104px;
 }
 
-
 .link-services {
   font-weight: 500;
   font-size: 20px;
   line-height: 200%;
-  color: #CC9933;
+  color: #cc9933;
+}
+
+.rectangle-arrow {
+  transform: translateY(2px);
 }
 
 .section-services-item-descr {
   margin: 0;
-  font-family: 'Muller';
+  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -324,7 +325,7 @@ html {
 }
 
 .section-advantages-descr {
-  font-family: 'Muller';
+  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -374,7 +375,7 @@ html {
 }
 
 .price-start {
-  font-family: 'Muller';
+  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -383,7 +384,7 @@ html {
 }
 
 .price-value {
-  font-family: 'Muller';
+  font-family: "Muller";
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -391,7 +392,7 @@ html {
 }
 
 .price-per-night {
-  font-family: 'Muller';
+  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -401,7 +402,7 @@ html {
 .accomodation-title {
   margin-top: 0;
   margin-bottom: 16px;
-  font-family: 'Muller';
+  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -411,7 +412,7 @@ html {
 .accomodation-info {
   margin-top: 0;
   margin-bottom: 20px;
-  font-family: 'Muller';
+  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -419,18 +420,18 @@ html {
   color: #999999;
 }
 
-
 .all-accomodations {
   background: url("/LAGOONA/img/41.png") center center no-repeat;
-  background-size: contain
+  background-size: contain;
 }
+
 .link-accomodation {
   margin: 373px 54px 27px 54px;
   display: inline-block;
-  font-family: 'Muller';
+  font-family: "Muller";
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 200%;
-  color: #FFFFFF;
+  color: #ffffff;
 }
