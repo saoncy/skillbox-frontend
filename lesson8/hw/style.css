@@ -496,7 +496,3 @@ select {
   font-size: 16px;
   line-height: 16px;
 }
-
-.form-input-number::placeholder {
-  color: #000000;
-}
