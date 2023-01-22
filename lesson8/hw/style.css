@@ -1,0 +1,502 @@
+/* open-sans-300 - latin_cyrillic */
+@font-face {
+  font-family: "Muller";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("/LAGOONA/fonts/MullerRegular.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/LAGOONA/fonts/MullerRegular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* open-sans-300 - latin_cyrillic */
+@font-face {
+  font-family: "Muller";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("/LAGOONA/fonts/MullerMedium.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/LAGOONA/fonts/MullerMedium.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* open-sans-300 - latin_cyrillic */
+@font-face {
+  font-family: "Muller";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("/LAGOONA/fonts/MullerBold.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("/LAGOONA/fonts/MullerBold.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+html {
+  font-family: "Muller", sans-serif;
+  background-color: #eaeaea;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.section-heading {
+  margin-top: 70px;
+  margin-left: 40px;
+  margin-bottom: 20px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 40px;
+  color: #333333;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 20px;
+  border: 1px solid #cc9933;
+  border-radius: 10px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  color: #cc9933;
+  cursor: pointer;
+}
+
+.link {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  color: #f0bf5f;
+}
+
+.rectangle-arrow {
+  transform: translateY(2px);
+}
+
+/* Header */
+
+.header-top {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  height: 54px;
+}
+
+.header-contact-link {
+  margin-left: 40px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  color: #666666;
+}
+
+.header-account-section {
+  margin-left: auto;
+  display: flex;
+}
+
+.header-account-arrow {
+  margin-right: 7px;
+  transform: translateY(-2px);
+}
+
+.header-account-link {
+  display: flex;
+  align-items: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  color: #cc9933;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  height: 70px;
+  background: #ffffff;
+  border-radius: 15px;
+}
+
+.nav-list {
+  display: flex;
+}
+
+.nav-link {
+  margin-left: 45px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  color: #666666;
+}
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 45px;
+}
+
+.header-nav-btn:not(:last-child) {
+  margin-right: 40px;
+}
+
+/* Special Offers */
+.section-special-offers-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 540px;
+}
+
+.section-special-offers-item {
+  margin-right: 24px;
+  display: flex;
+  flex-direction: column;
+  width: 573px;
+  height: 258px;
+  padding-top: 40px;
+  padding-left: 45px;
+  padding-bottom: 40px;
+  border-radius: 15px;
+}
+
+.first-special-offer {
+  background: url("/LAGOONA/img/Rectangle\ 15.png") left top no-repeat;
+  background-size: contain;
+}
+
+.second-special-offer {
+  background: url("/LAGOONA/img/Rectangle\ 14.png") left top no-repeat;
+  background-size: contain;
+}
+
+.section-special-offers-item:not(:nth-child(2n)) {
+  margin-bottom: 24px;
+}
+
+.section-special-offers-item:last-child {
+  margin-bottom: 0;
+  margin-right: 0;
+}
+
+.section-special-offers-item-content {
+  width: 420px;
+  height: 178px;
+}
+
+.section-special-offers-item-heading {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 40px;
+  color: #ffffff;
+}
+
+.big-special-offer {
+  flex-basis: 100%;
+  background: url("/LAGOONA/img/33\ 1.png") left top no-repeat;
+  background-size: contain;
+  padding-top: 212px;
+}
+
+.big-special-offer-heading {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 60px;
+}
+
+.section-special-offers-item-price {
+  margin-top: 15px;
+  margin-bottom: 47px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  color: #e1e1e1;
+}
+
+.offer-arrow {
+  transform: translateY(5px);
+}
+
+/* About Us */
+.section-about-us-descr {
+  width: 900px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 200%;
+}
+
+/* Services */
+.section-services-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-services-item {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 330px;
+  margin-bottom: 24px;
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+
+.section-services-item:not(:nth-child(2n)) {
+  margin-right: 24px;
+}
+
+.section-services-img {
+  display: inline-block;
+  height: 165px;
+}
+
+.section-services-item-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 26px;
+  margin-left: 45px;
+  margin-bottom: 35px;
+  margin-right: 126px;
+  width: 402px;
+}
+
+.link-services {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 200%;
+  color: #cc9933;
+}
+
+.section-services-item-descr {
+  margin: 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 200%;
+}
+
+/* Advantages */
+.section-advantages-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-advantages-item {
+  flex: 1 1 12.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 276px;
+  min-width: 276px;
+  border-radius: 15px;
+  margin-bottom: 24px;
+  padding: 40px 42px 32px 45px;
+  background: #ffffff;
+}
+
+.section-advantages-item:not(:nth-child(4n)) {
+  margin-right: 22px;
+}
+
+.section-advantages-descr {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 200%;
+}
+
+/* Accomodation */
+
+.section-accomodation-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-accomodation-item {
+  margin-bottom: 22px;
+  width: 374px;
+  height: 440px;
+  background: #ffffff;
+  border-radius: 15px;
+}
+
+.section-accomodation-item:not(:nth-child(3n)) {
+  margin-right: 24px;
+}
+
+.section-accomodation-item-content {
+  height: 223px;
+  padding: 32px 45px 45px 45px;
+}
+
+.accomodation-info-top {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.accomodation-info-price-section {
+  display: flex;
+  align-items: center;
+}
+
+.accomodation-price {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 4px;
+}
+
+.price-start {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  color: #999999;
+}
+
+.price-value {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.price-per-night {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.accomodation-title {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.accomodation-info {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  color: #999999;
+}
+
+.all-accomodations {
+  background: url("/LAGOONA/img/41.png") center center no-repeat;
+  background-size: contain;
+}
+
+.link-accomodation {
+  margin: 373px 54px 27px 54px;
+  display: inline-block;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 200%;
+  color: #ffffff;
+}
+
+/* Want A Tour */
+
+.want-a-tour-container {
+  margin-top: 70px;
+  padding: 45px 40px 45px 45px;
+  background: #e5e5e5;
+  border-radius: 15px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 32px 28px;
+  background: #ffffff;
+  border-radius: 15px;
+}
+
+.want-a-tour-heading {
+  margin: 0 0 20px 0;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-item-heading {
+  margin-bottom: 15px;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.drop-item {
+  font-family: "Muller", sans-serif;
+  border-width: 0;
+  background: url("/LAGOONA/img/icons/Rectangle\ 2.svg") right center no-repeat;
+  padding-right: 26px;
+}
+
+.btn-form {
+  background: #ffffff;
+}
+
+.date-menu {
+  font-family: "Muller", sans-serif;
+  border-width: 0px;
+}
+
+.form-input-number {
+  border-top: 0;
+  border-left: 0;
+  border-bottom: 1px solid #e5e5e5;
+  border-right: 0;
+  font-family: "Muller", sans-serif;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.form-input-number::placeholder {
+  color: #000000;
+}
