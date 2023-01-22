@@ -1,6 +1,6 @@
 /* open-sans-300 - latin_cyrillic */
 @font-face {
-  font-family: "Muller";
+  font-family: 'Muller';
   font-style: normal;
   font-weight: 400;
   src: local(""), url("/LAGOONA/fonts/MullerRegular.woff2") format("woff2"),
@@ -10,7 +10,7 @@
 
 /* open-sans-300 - latin_cyrillic */
 @font-face {
-  font-family: "Muller";
+  font-family: 'Muller';
   font-style: normal;
   font-weight: 500;
   src: local(""), url("/LAGOONA/fonts/MullerMedium.woff2") format("woff2"),
@@ -20,7 +20,7 @@
 
 /* open-sans-300 - latin_cyrillic */
 @font-face {
-  font-family: "Muller";
+  font-family: 'Muller';
   font-style: normal;
   font-weight: 700;
   src: local(""), url("/LAGOONA/fonts/MullerBold.woff2") format("woff2"),
@@ -63,7 +63,6 @@ html {
   margin-top: 70px;
   margin-left: 40px;
   margin-bottom: 20px;
-  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
@@ -76,7 +75,6 @@ html {
   padding: 13px 20px;
   border: 1px solid #cc9933;
   border-radius: 10px;
-  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -85,7 +83,6 @@ html {
 }
 
 .link {
-  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -108,7 +105,6 @@ html {
 
 .header-contact-link {
   margin-left: 40px;
-  font-family: "Muller";
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -129,7 +125,6 @@ html {
 .header-account-link {
   display: flex;
   align-items: center;
-  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -153,7 +148,6 @@ html {
 
 .nav-link {
   margin-left: 45px;
-  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -215,7 +209,6 @@ html {
 }
 
 .section-special-offers-item-heading {
-  font-family: "Muller";
   font-style: normal;
   font-weight: 700;
   font-size: 40px;
@@ -239,7 +232,6 @@ html {
 .section-special-offers-item-price {
   margin-top: 15px;
   margin-bottom: 47px;
-  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -254,7 +246,6 @@ html {
 /* About Us */
 .section-about-us-descr {
   width: 900px;
-  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -307,7 +298,6 @@ html {
 
 .section-services-item-descr {
   margin: 0;
-  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -338,7 +328,6 @@ html {
 }
 
 .section-advantages-descr {
-  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -388,7 +377,6 @@ html {
 }
 
 .price-start {
-  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -397,7 +385,6 @@ html {
 }
 
 .price-value {
-  font-family: "Muller";
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
@@ -405,7 +392,6 @@ html {
 }
 
 .price-per-night {
-  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -415,7 +401,6 @@ html {
 .accomodation-title {
   margin-top: 0;
   margin-bottom: 16px;
-  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -425,7 +410,6 @@ html {
 .accomodation-info {
   margin-top: 0;
   margin-bottom: 20px;
-  font-family: "Muller";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -441,7 +425,6 @@ html {
 .link-accomodation {
   margin: 373px 54px 27px 54px;
   display: inline-block;
-  font-family: "Muller";
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
