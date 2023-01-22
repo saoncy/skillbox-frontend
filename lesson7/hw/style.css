@@ -268,8 +268,11 @@ html {
 }
 
 .section-services-item {
-  width: 573px;
-  height: 330px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 330px;
   margin-bottom: 24px;
   border-radius: 15px;
   background-color: #ffffff;
@@ -285,12 +288,14 @@ html {
 }
 
 .section-services-item-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin-top: 26px;
   margin-left: 45px;
   margin-bottom: 35px;
   margin-right: 126px;
   width: 402px;
-  height: 104px;
 }
 
 .link-services {
@@ -316,12 +321,16 @@ html {
 }
 
 .section-advantages-item {
+  flex: 1 1 12.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 276px;
+  min-width: 276px;
+  border-radius: 15px;
   margin-bottom: 24px;
-  width: 276px;
-  height: 276px;
   padding: 40px 42px 32px 45px;
   background: #ffffff;
-  border-radius: 15px;
 }
 
 .section-advantages-item:not(:nth-child(4n)) {
