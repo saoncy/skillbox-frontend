@@ -479,6 +479,7 @@ select {
 }
 
 .btn-form {
+  padding: 13px 30px;
   background: #ffffff;
 }
 
@@ -495,4 +496,63 @@ select {
   font-family: "Muller", sans-serif;
   font-size: 16px;
   line-height: 16px;
+}
+
+/* Contacts */
+.section-contacts-content {
+  display: flex;
+  padding: 45px;
+  background: #FFFFFF;
+  border-radius: 15px;
+}
+
+.section-contacts-item {
+  display: flex;
+  max-width: 375px;
+  border-bottom: 1px solid #E9E9E9;
+  padding-bottom: 23px;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.section-contacts-item:not(:first-child) {
+  padding-top: 25px;
+}
+
+.contacts-item-heading {
+  width: 145px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.contacts-item-descr {
+  margin: 0;
+  max-width: 230px;
+}
+
+.section-contacts-office-img {
+  margin-left: 52px;
+}
+
+.contacts-item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts-item-link {
+  line-height: 150%;
+}
+
+.contacts-item-email-descr {
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #999999;
+}
+
+.contacts-btn {
+  margin-top: 45px;
+  padding: 27px 29px;
 }

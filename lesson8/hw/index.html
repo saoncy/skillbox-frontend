@@ -794,42 +794,90 @@
     </section>
 
     <section class="want-a-tour">
-      <div class="container want-a-tour-container">
-        <h2 class="section-heading want-a-tour-heading">
-          Хочу тур
-        </h2>
-        <form action="https://jsonplaceholder.typicode.com/posts" method="post" class="form-container">
-          <div class="form-item">
-            <label class="form-item-heading" for="city">Город вылета</label>
-            <select name="depart-city" id="city" class="drop-item">
-              <option value="SPB">Санкт-Петербург</option>
-              <option value="MSC">Москва</option>
-              <option value="NN">Нижний Новгород</option>
-            </select>
-          </div>
-          <div class="form-item">
-            <label class="form-item-heading" for="country">Страна</label>
-            <select name="depart-ccountry" id="country" class="drop-item">
-              <option value="AU">Австралия</option>
-              <option value="ES">Испания</option>
-              <option value="CY">Кипр</option>
-            </select>
-          </div>
-          <div class="form-item">
-            <label class="form-item-heading" for="date">Дата прибытия</label>
-            <input class="date-menu" required type="date" name="arrivial-date" id="date">
-          </div>
-          <div class="form-item">
-            <label class="form-item-heading" for="nights">Ночей</label>
-            <input class="form-input-number" required type="number" name="nights-cnt" id="nights" value="6">
-          </div>
-          <div class="form-item">
-            <label class="form-item-heading" for="guests">Туристы</label>
-            <input class="form-input-number" required type="number" name="guests-cnt" id="guests" value="2">
-          </div>
-          <button type="submit" class="btn btn-form">Найти</button>
-        </form>
+      <div class="container">
+        <div class="want-a-tour-container">
+          <h2 class="section-heading want-a-tour-heading">
+            Хочу тур
+          </h2>
+          <form action="https://jsonplaceholder.typicode.com/posts" method="post" class="form-container">
+            <div class="form-item">
+              <label class="form-item-heading" for="city">Город вылета</label>
+              <select name="depart-city" id="city" class="drop-item">
+                <option value="SPB">Санкт-Петербург</option>
+                <option value="MSC">Москва</option>
+                <option value="NN">Нижний Новгород</option>
+              </select>
+            </div>
+            <div class="form-item">
+              <label class="form-item-heading" for="country">Страна</label>
+              <select name="depart-ccountry" id="country" class="drop-item">
+                <option value="AU">Австралия</option>
+                <option value="ES">Испания</option>
+                <option value="CY">Кипр</option>
+              </select>
+            </div>
+            <div class="form-item">
+              <label class="form-item-heading" for="date">Дата прибытия</label>
+              <input class="date-menu" required type="date" name="arrivial-date" id="date">
+            </div>
+            <div class="form-item">
+              <label class="form-item-heading" for="nights">Ночей</label>
+              <input class="form-input-number" required type="number" name="nights-cnt" id="nights" value="6">
+            </div>
+            <div class="form-item">
+              <label class="form-item-heading" for="guests">Туристы</label>
+              <input class="form-input-number" required type="number" name="guests-cnt" id="guests" value="2">
+            </div>
+            <button type="submit" class="btn btn-form">Найти</button>
+          </form>
+        </div>
       </div>
+    </section>
+
+    <section class="contacts">
+     <div class="container">
+       <h2 class="section-heading">
+         Контакты
+       </h2>
+       <div class="section-contacts-content">
+         <ul class="section-contacts-list">
+          <li class="section-contacts-item">
+            <strong class="contacts-item-heading">Адрес</strong>
+            <div class="contacts-item-info">
+              <p class="contacts-item-descr">
+                Москва, улица Юности, дом 5 строение 4, офис 2
+              </p>
+            </div>
+          </li>
+          <li class="section-contacts-item">
+            <strong class="contacts-item-heading">Телефоны</strong>
+            <div class="contacts-item-info">
+              <a href="tel:+74995356434" class="link contacts-item-link">+7 499 535-64-34</a>
+              <a href="tel:+74950050544" class="link contacts-item-link">+7 495 005-05-44</a>
+            </div>
+          </li>
+          <li class="section-contacts-item">
+            <strong class="contacts-item-heading">Email</strong>
+            <div class="contacts-item-info">
+              <a href="mailto:lg.oona@mail.ru" class="link contacts-item-ink">lg.oona@mail.ru</a>
+              <p class="contacts-item-email-descr">по вопросам бронирования</p>
+              <a href="mailto:hotels.ln@mail.ru" class="link contacts-item-link">hotels.ln@mail.ru</a>
+              <p class="contacts-item-email-descr">по вопросам сотрудничества</p>
+            </div>
+          </li>
+          <li class="section-contacts-item">
+            <strong class="contacts-item-heading">График</strong>
+            <div class="contacts-item-info">
+              <p class="contacts-item-descr">
+                Понедельник-пятница, с 10:00 до 19:00
+              </p>
+            </div>
+          </li>
+          <a href="" class="btn contacts-btn">Построить маршрут</a>
+         </ul>
+         <img src="/LAGOONA/img/Layer 2 1.png" alt="" class="section-contacts-office-img">
+       </div>
+     </div>
     </section>
   </main>
 </body>
