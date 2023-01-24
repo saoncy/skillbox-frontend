@@ -1,0 +1,21 @@
+.test,
+.skillbox {
+  font-size: 16px;
+  border: 1px solid red;
+}
+
+.test {
+  margin-bottom: 10px;
+}
+
+.space .child {
+  background-color: #999;
+}
+
+.space > .child {
+  border: 1px solid red;
+}
+
+.child-first ~ .child {
+  border-color: blue;
+}
