@@ -130,3 +130,51 @@ button:disabled {
   pointer-events: none;
   opacity: 0.4;
 }
+
+
+p::first-letter {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+p::first-line {
+  font-style: italic;
+}
+
+::selection {
+  background-color: yellow;
+}
+
+.scene {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #999;
+}
+
+.scene > * {
+  position: relative;
+  z-index: 1;
+}
+
+.scene::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #999;
+}
+
+.scene::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #999;
+}
