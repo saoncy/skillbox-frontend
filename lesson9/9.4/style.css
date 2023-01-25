@@ -150,6 +150,19 @@ p::first-line {
   width: 300px;
   height: 300px;
   border: 1px solid #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* transition-property: color, font-size;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(.24, .51, 1, .02); */
+  /* transition-delay: 1s; */
+  transition: color, font-size 500ms cubic-bezier(.24, .51, 1, .02);
+}
+
+.scene:hover {
+  font-size: 24px;
+  color: blue;
 }
 
 .scene > * {
@@ -158,7 +171,7 @@ p::first-line {
 }
 
 .scene::before {
-  content: '';
+  /* content: ''; */
   display: block;
   position: absolute;
   top: 0;
@@ -169,7 +182,7 @@ p::first-line {
 }
 
 .scene::after {
-  content: '';
+  /* content: ''; */
   display: block;
   position: absolute;
   top: 0;
