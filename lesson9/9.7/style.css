@@ -1,0 +1,133 @@
+html {
+  font-style: sans-serif;
+}
+
+.elements {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.elem {
+  flex-grow: 1;
+  margin: 30px;
+  min-width: 200px;
+  max-width: 25%;
+  height: 200px;
+  background-color: navy;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s;
+  color: #fff;
+  font-weight: bold;
+}
+
+.elem:hover {
+  transition: transform 0.3s;
+}
+
+.elem-matrix:hover {
+  transform: matrix(1.2, 0, 0.5, 1.2, 50, 0);
+}
+
+.elem-translate:hover {
+  transform: translate(5px, 10px);
+}
+
+.elem-translateX:hover {
+  transform: translateX(50px);
+}
+.elem-translateY:hover {
+  transform: translateY(150px);
+}
+
+.elem-scale:hover {
+  transform: scale(0.5, 0.5);
+}
+
+.elem-scaleX:hover {
+  transform: scaleX(150%);
+}
+.elem-scaleY:hover {
+  transform: scaleY(1.3);
+}
+
+.elem-rotate:hover {
+  transform: rotate(360deg);
+}
+
+.elem-skew:hover {
+  transform: skew(-35deg, 50deg);
+}
+
+.elem-skewX:hover {
+  transform: skewX(15deg);
+}
+
+.elem-skewY:hover {
+  transform: skewY(35deg);
+}
+
+
+.elem-rotate-origin {
+  transform-origin: top right;
+}
+
+.elem-rotate-origin:hover {
+transform: rotate(-15deg) scale(1.1) skewX(-15deg);
+transform-origin: top right;
+}
+
+.scene {
+  position: relative;
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* transition-property: color, font-size;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(.24, .51, 1, .02); */
+  /* transition-delay: 1s; */
+  transition: color 500ms ease-in-out;
+}
+
+.scene:hover {
+  color: white;
+}
+
+.scene:hover::after,
+.scene:hover::before {
+  transform: none;
+}
+
+.scene > * {
+  position: relative;
+  z-index: 1;
+}
+
+.scene::before,
+.scene::after {
+  display: block;
+  position: absolute;
+  content: '';
+  left: 0;
+  right: 0;
+  transition: transform 500ms ease-in-out;
+}
+
+.scene::before {
+  top: 0;
+  bottom: 50%;
+  background: navy;
+  transform: translateY(-100%);
+}
+
+.scene::after {
+  top: 50%;
+  bottom: 0;
+  background: navy;
+  transform: translateY(100%);
+}
