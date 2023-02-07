@@ -34,6 +34,10 @@ a {
   text-decoration: none;
 }
 
+a:focus {
+  outline: 3px solid rgba(0, 0, 255, .3);
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -66,10 +70,19 @@ html {
   color: white;
   background-color: #3172b9;
   border-radius: 4px;
+  transition: filter .3s ease;
   cursor: pointer;
 }
 
-.btn.btn-big {
+.btn:hover {
+  filter: brightness(115%);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn .btn-big {
   padding: 20px 45px;
 }
 
@@ -109,7 +122,10 @@ html {
 
 .nav-list {
   display: flex;
-  margin: auto;
+}
+
+.logo {
+  margin-right: auto;
 }
 
 .nav-item {
@@ -119,9 +135,14 @@ html {
 
 .nav-link {
   color: #1c1c1c;
+  transition: color .3s ease;
 }
 
-.nav-item.is-active .nav-link {
+.nav-link:hover {
+  color: #3172b9;
+}
+
+.nav-item .is-active {
   color: #3172b9;
 }
 
@@ -130,7 +151,7 @@ html {
 }
 
 .header-btn {
-  margin-left: 40px;
+  margin-left: 80px;
 }
 
 /* Hero */
@@ -216,14 +237,33 @@ html {
   flex: 1 1 25%;
   border: 1px solid #e4e4e4;
   border-radius: 5px;
+  transition: background-color .3s ease;
 }
 
 .section-do-item:not(:last-child) {
   margin-right: 30px;
 }
 
+.section-do-item:hover {
+  background-color: #3172b9;
+  cursor: pointer;
+}
+
+.section-do-item:hover .section-do-item-heading,
+.section-do-item:hover .section-do-item-descr {
+  color: white;
+}
+
+.section-do-item:hover .section-do-icon path {
+  fill: white;
+}
+
 .section-do-icon {
   margin-bottom: 30px;
+}
+
+.section-do-icon path {
+  transition: fill .3s ease
 }
 
 .section-do-item-heading {
@@ -232,6 +272,7 @@ html {
   line-height: 1;
   font-weight: 600;
   color: #1c1c1c;
+  transition: color .3s ease
 }
 
 .section-do-item-descr {
@@ -240,7 +281,8 @@ html {
   line-height: 21px;
   font-weight: 300;
   text-align: center;
-  color: #787878
+  color: #787878;
+  transition: color .3s ease
 }
 
 /* Clients */
@@ -468,7 +510,6 @@ html {
 .footer-nav-list {
   display: flex;
 }
-
 .footer-nav-item:not(:last-child) {
   margin-right: 35px;
 }
@@ -496,6 +537,11 @@ html {
   line-height: 21px;
   color: #787878;
   font-weight: 400;
+  transition: color .3s ease;
+}
+
+.footer-nav-link:hover {
+  color: #3172b9;
 }
 
 .footer-social-icon {
