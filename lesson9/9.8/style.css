@@ -1,0 +1,23 @@
+:root {
+  --font-size: 30px;
+  --font-color: red;
+}
+
+body {
+  font-size: var(--font-size);
+  color: var(--font-color);
+}
+
+@media (max-width: 1000px) {
+  :root {
+    --font-size: 15px;
+  }
+}
+
+.test {
+  --font-size: 5px;
+  --font-color: blue;
+  font-size: var(--font-size);
+  color: var(--font-color);
+  margin-top: 40px;
+}
