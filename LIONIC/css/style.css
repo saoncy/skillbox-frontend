@@ -141,16 +141,16 @@ html {
   border-bottom: 1px solid #e4e4e4;
 }
 
-.hero-container {
+.section-hero__container {
   padding-top: 120px;
   padding-bottom: 130px;
 }
 
-.hero-content {
+.section-hero__content {
   max-width: 50%;
 }
 
-.section-hero-heading {
+.section-hero__heading {
   margin-top: 0;
   margin-bottom: 30px;
   font-size: 40px;
@@ -159,7 +159,7 @@ html {
   color: #1c1c1c;
 }
 
-.section-hero-descr {
+.section-hero__descr {
   margin-top: 0;
   margin-bottom: 34px;
   font-size: 16px;
@@ -167,11 +167,11 @@ html {
   color: #787878;
 }
 
-.section-hero-action {
+.section-hero__action {
   display: inline-block;
 }
 
-.section-hero-btn-descr {
+.section-hero__btn-descr {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -183,7 +183,7 @@ html {
   color: #787878;
 }
 
-.section-hero-ssl-icon  {
+.section-hero__ssl-icon  {
   display: inline-block;
   width: 13px;
   height: 17px;
