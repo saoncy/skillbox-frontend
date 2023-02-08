@@ -38,6 +38,119 @@
        url('../fonts/montserrat-v25-latin_cyrillic-700.svg#Montserrat') format('svg'); /* Legacy iOS */
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  max-width: 1770px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bold-descr {
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.button {
+  display: inline-block;
+  padding: 20px 38px;
+  border: none;
+  outline: none;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.button_theme_filled {
+  color: #FFF;
+  background-color: #FF9900;
+}
+
+/* HEADER */
+
+.header {
+  position: relative;
+  height: 100px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.header__container {
+  margin-left: 75px;
+  margin-right: 75px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.burger {
+  display: none;
+}
+
+.header__logo {
+  width: 224px;
+  height: 72px;
+  margin-right: auto;
+}
+
+.header__right {
+  display: flex;
+}
+
+.nav-list {
+  display: flex;
+}
+
+.nav-list__item {
+  margin-right: 85px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #333333;
+}
+
+/* HERO */
+.hero__container {
+  margin-left: 75px;
+  margin-right: 75px;
+  padding-top: 100px;
+  padding-left: 80px;
+  min-height: 620px;
+  position: relative;
+  background: url('/EVKLID/img/low-angle-photo-of-balconies-2462015\ 1.jpg') left center no-repeat;
+  background-size: cover;
+}
+
+.hero__heading {
+  margin: 0;
+  max-width: 850px;
+  font-weight: 800;
+  font-size: 70px;
+  line-height: 85px;
+  color: #FFF;
+}
+
+.hero__description {
+  margin-bottom: 90px;
+  max-width: 850px;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.hero__button {
+  padding: 25px 37px;
+  font-size: 23px;
+  line-height: 29px;
 }
