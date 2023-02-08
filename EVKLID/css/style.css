@@ -230,6 +230,25 @@ ul {
   line-height: 32px;
 }
 
+.about__block {
+  height: 295px;
+  display: flex;
+  align-items: center;
+  padding: 65px 60px;
+  border: 1px solid #CACACA;
+  border-radius: 32px;
+}
+
+.about__block:not(:first-child) {
+  margin-top: 32px;
+}
+
+.about__block-logo {
+  width: 190px;
+  height: 165px;
+  margin-right: 50px;
+}
+
 /* MEDIA */
 
 @media (max-width: 1200px) {
