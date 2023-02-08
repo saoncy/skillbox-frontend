@@ -44,6 +44,7 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+  background: #E5E5E5;
 }
 
 ul {
@@ -71,6 +72,7 @@ ul {
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
+  border-radius: 16px;
 }
 
 .button_theme_filled {
@@ -83,7 +85,8 @@ ul {
 .header {
   position: relative;
   height: 100px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: #FFF;
+  border-radius: 0px 0px 32px 32px;
   z-index: 1;
 }
 
@@ -127,6 +130,7 @@ ul {
 
 /* HERO */
 .hero__container {
+  margin-top: 50px;
   margin-left: 75px;
   margin-right: 75px;
   padding-top: 100px;
@@ -135,6 +139,7 @@ ul {
   position: relative;
   background: url('/EVKLID/img/low-angle-photo-of-balconies-2462015\ 1.jpg') left center no-repeat;
   background-size: cover;
+  border-radius: 32px;
 }
 
 .hero__heading {
@@ -147,7 +152,7 @@ ul {
 }
 
 .hero__description {
-  margin-bottom: 90px;
+  margin-bottom: 50px;
   max-width: 850px;
   font-size: 24px;
   line-height: 29px;
