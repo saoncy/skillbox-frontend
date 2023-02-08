@@ -121,6 +121,10 @@ ul {
   color: #333333;
 }
 
+.burger {
+  display: none;
+}
+
 /* HERO */
 .hero__container {
   margin-left: 75px;
@@ -153,4 +157,26 @@ ul {
   padding: 25px 37px;
   font-size: 23px;
   line-height: 29px;
+}
+
+
+
+/* MEDIA */
+
+@media (max-width: 1200px) {
+  .nav-list {
+    display: none;
+  }
+
+  .burger {
+    display: inline-block;
+  }
+
+  .header__logo {
+    margin: 0;
+  }
+
+  .header__container {
+    justify-content: space-between;
+  }
 }
