@@ -60,6 +60,7 @@ ul {
 }
 
 .bold-descr {
+  margin: 0;
   font-weight: 700;
   color: #FFFFFF;
 }
@@ -78,6 +79,26 @@ ul {
 .button_theme_filled {
   color: #FFF;
   background-color: #FF9900;
+}
+
+.button_theme_empty {
+  color: #FFFFFF;
+  background: transparent;
+  border: 3px solid #FF9900;
+}
+
+.title {
+  margin: 0;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 59px;
+}
+
+.description {
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
 }
 
 /* HEADER */
@@ -131,8 +152,6 @@ ul {
 /* HERO */
 .hero__container {
   margin-top: 50px;
-  margin-left: 75px;
-  margin-right: 75px;
   padding-top: 100px;
   padding-left: 80px;
   min-height: 620px;
@@ -165,6 +184,51 @@ ul {
 }
 
 
+/* ABOUT */
+
+.about__container {
+  margin-top: 50px;
+}
+
+.about__description {
+  margin-top: 20px;
+  max-width: 1250px;
+}
+
+.about__content {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.about__column {
+  max-width: 870px;
+  flex: 1 1 calc(50% - 32px);
+}
+
+.banner {
+  height: 622px;
+  padding-top: 426px;
+  background: url('/EVKLID/img/Rectangle\ 2.png') left center no-repeat;
+  background-size: cover;
+  background-color: transparent;
+}
+
+.banner__bottom {
+  height: 196px;
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, .5);
+  border-radius: 32px;
+}
+
+.banner__description {
+  max-width: 450px;
+  font-size: 16px;
+  line-height: 32px;
+}
 
 /* MEDIA */
 
