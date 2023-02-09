@@ -206,16 +206,20 @@ ul {
 }
 
 .banner {
+  position: relative;
   min-height: 623px;
-  padding-top: 426px;
-  background: url('/EVKLID/img/Rectangle\ 2.png') left center no-repeat;
+  /* padding-top: 426px; */
+  background: url('/EVKLID/img/Rectangle\ 2.jpg') left center no-repeat;
   background-size: cover;
   background-color: transparent;
   border-radius: 32px;
 }
 
 .banner__bottom {
+  position: absolute;
+  bottom: 0%;
   height: 196px;
+  width: 100%;
   padding: 50px;
   display: flex;
   justify-content: space-between;
@@ -275,5 +279,10 @@ ul {
 
   .about__column:first-child {
     max-width: 60%;
+  }
+
+  .about__block {
+    flex-direction: column;
+    text-align: center;
   }
 }
