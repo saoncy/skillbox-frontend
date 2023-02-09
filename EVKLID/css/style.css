@@ -54,7 +54,9 @@ ul {
 }
 
 .container {
-  max-width: 1770px;
+  max-width: 1800px;
+  padding-left: 15px;
+  padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -104,18 +106,15 @@ ul {
 /* HEADER */
 
 .header {
-  position: relative;
   height: 100px;
   background: #FFF;
   border-radius: 0px 0px 32px 32px;
-  z-index: 1;
 }
 
 .header__container {
-  margin-left: 75px;
-  margin-right: 75px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 100%;
 }
 
@@ -207,11 +206,12 @@ ul {
 }
 
 .banner {
-  height: 622px;
+  min-height: 623px;
   padding-top: 426px;
   background: url('/EVKLID/img/Rectangle\ 2.png') left center no-repeat;
   background-size: cover;
   background-color: transparent;
+  border-radius: 32px;
 }
 
 .banner__bottom {
@@ -231,7 +231,6 @@ ul {
 }
 
 .about__block {
-  height: 295px;
   display: flex;
   align-items: center;
   padding: 65px 60px;
@@ -266,5 +265,15 @@ ul {
 
   .header__container {
     justify-content: space-between;
+  }
+}
+
+@media (max-width: 1800px) {
+  .about__column {
+    max-width: 39.2%;
+  }
+
+  .about__column:first-child {
+    max-width: 60%;
   }
 }
