@@ -44,7 +44,6 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background: #E5E5E5;
 }
 
 ul {
@@ -89,6 +88,12 @@ ul {
   border: 3px solid #FF9900;
 }
 
+.button_theme_empty_thin {
+  background: transparent;
+  border: 1px solid #000;
+  font-weight: 400;
+}
+
 .title {
   margin: 0;
   font-weight: 400;
@@ -103,11 +108,26 @@ ul {
   line-height: 32px;
 }
 
+.block__heading {
+  margin: 0;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.work__content__right {
+  width: 870px;
+  height: 460px;
+  background: url('/EVKLID/img/Rectangle\ 18.jpg') center center no-repeat;
+  background-size: cover;
+  border-radius: 32px;
+}
+
 /* HEADER */
 
 .header {
   height: 100px;
   background: #FFF;
+  box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.1);
   border-radius: 0px 0px 32px 32px;
 }
 
@@ -155,7 +175,7 @@ ul {
   padding-left: 80px;
   min-height: 620px;
   position: relative;
-  background: url('/EVKLID/img/low-angle-photo-of-balconies-2462015\ 1.jpg') left center no-repeat;
+  background: url('/EVKLID/img/low-angle-photo-of-balconies-2462015\ 1.jpg') center center no-repeat;
   background-size: cover;
   border-radius: 32px;
 }
@@ -208,6 +228,7 @@ ul {
 .banner {
   position: relative;
   min-height: 623px;
+  height: 100%;
   /* padding-top: 426px; */
   background: url('/EVKLID/img/Rectangle\ 2.jpg') left center no-repeat;
   background-size: cover;
@@ -251,7 +272,61 @@ ul {
   height: 165px;
   margin-right: 50px;
 }
+/*
+.about__block-info {
+  display: inline-block;
+} */
 
+.about__block-heading {
+  margin-bottom: 8px;
+  line-height: 29px;
+}
+
+.about__block-description {
+  max-width: 450px;
+}
+
+/* WORK */
+
+.work__container {
+  margin-top: 100px;
+}
+
+.work__step-nav {
+  margin-top: 50px;
+}
+
+.work__step {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.work__step:not(:first-child) {
+  margin-left: 86px;
+}
+
+.work__content {
+  margin-top: 45px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.work__content__left {
+  max-width: 760px;
+}
+
+.work__step-description {
+  margin-top: 8px;
+}
+
+.work__buttons {
+  margin-top: 18px;
+}
+
+.work__button:not(:first-child) {
+  margin-left: 32px;
+}
 /* MEDIA */
 
 @media (max-width: 1200px) {
