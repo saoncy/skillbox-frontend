@@ -272,10 +272,6 @@ ul {
   height: 165px;
   margin-right: 50px;
 }
-/*
-.about__block-info {
-  display: inline-block;
-} */
 
 .about__block-heading {
   margin-bottom: 8px;
@@ -327,6 +323,33 @@ ul {
 .work__button:not(:first-child) {
   margin-left: 32px;
 }
+
+/* FAQ */
+
+.faq__container {
+  margin-top: 100px;
+}
+
+.faq__title {
+  padding-bottom: 32px;
+  border-bottom: 1px solid #CACACA;
+}
+
+.faq__question {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #CACACA;
+}
+
+.question__heading {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+}
+
 /* MEDIA */
 
 @media (max-width: 1200px) {
