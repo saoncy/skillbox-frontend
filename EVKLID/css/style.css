@@ -1,41 +1,60 @@
 /* montserrat-regular - latin_cyrillic */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/montserrat-v25-latin_cyrillic-regular.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/montserrat-v25-latin_cyrillic-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/montserrat-v25-latin_cyrillic-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/montserrat-v25-latin_cyrillic-regular.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/montserrat-v25-latin_cyrillic-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/montserrat-v25-latin_cyrillic-regular.svg#Montserrat') format('svg'); /* Legacy iOS */
+  src: url("../fonts/montserrat-v25-latin_cyrillic-regular.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/montserrat-v25-latin_cyrillic-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/montserrat-v25-latin_cyrillic-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/montserrat-v25-latin_cyrillic-regular.woff") format("woff"),
+    /* Modern Browsers */
+      url("../fonts/montserrat-v25-latin_cyrillic-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/montserrat-v25-latin_cyrillic-regular.svg#Montserrat")
+      format("svg"); /* Legacy iOS */
 }
 /* montserrat-600 - latin_cyrillic */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
-  src: url('../fonts/montserrat-v25-latin_cyrillic-600.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/montserrat-v25-latin_cyrillic-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/montserrat-v25-latin_cyrillic-600.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/montserrat-v25-latin_cyrillic-600.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/montserrat-v25-latin_cyrillic-600.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/montserrat-v25-latin_cyrillic-600.svg#Montserrat') format('svg'); /* Legacy iOS */
+  src: url("../fonts/montserrat-v25-latin_cyrillic-600.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/montserrat-v25-latin_cyrillic-600.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/montserrat-v25-latin_cyrillic-600.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/montserrat-v25-latin_cyrillic-600.woff") format("woff"),
+    /* Modern Browsers */ url("../fonts/montserrat-v25-latin_cyrillic-600.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/montserrat-v25-latin_cyrillic-600.svg#Montserrat")
+      format("svg"); /* Legacy iOS */
 }
 /* montserrat-700 - latin_cyrillic */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
-  src: url('../fonts/montserrat-v25-latin_cyrillic-700.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/montserrat-v25-latin_cyrillic-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/montserrat-v25-latin_cyrillic-700.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/montserrat-v25-latin_cyrillic-700.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/montserrat-v25-latin_cyrillic-700.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/montserrat-v25-latin_cyrillic-700.svg#Montserrat') format('svg'); /* Legacy iOS */
+  src: url("../fonts/montserrat-v25-latin_cyrillic-700.eot"); /* IE9 Compat Modes */
+  src: url("../fonts/montserrat-v25-latin_cyrillic-700.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/montserrat-v25-latin_cyrillic-700.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/montserrat-v25-latin_cyrillic-700.woff") format("woff"),
+    /* Modern Browsers */ url("../fonts/montserrat-v25-latin_cyrillic-700.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/montserrat-v25-latin_cyrillic-700.svg#Montserrat")
+      format("svg"); /* Legacy iOS */
 }
 
 * {
@@ -43,7 +62,7 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 ul {
@@ -63,7 +82,7 @@ ul {
 .bold-descr {
   margin: 0;
   font-weight: 700;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .button {
@@ -78,14 +97,14 @@ ul {
 }
 
 .button_theme_filled {
-  color: #FFF;
-  background-color: #FF9900;
+  color: #fff;
+  background-color: #ff9900;
 }
 
 .button_theme_empty {
-  color: #FFFFFF;
+  color: #ffffff;
   background: transparent;
-  border: 3px solid #FF9900;
+  border: 3px solid #ff9900;
 }
 
 .button_theme_empty_thin {
@@ -117,7 +136,7 @@ ul {
 .work__content__right {
   width: 870px;
   height: 460px;
-  background: url('/EVKLID/img/Rectangle\ 18.jpg') center center no-repeat;
+  background: url("/EVKLID/img/Rectangle\ 18.jpg") center center no-repeat;
   background-size: cover;
   border-radius: 32px;
 }
@@ -126,7 +145,7 @@ ul {
 
 .header {
   height: 100px;
-  background: #FFF;
+  background: #fff;
   box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.1);
   border-radius: 0px 0px 32px 32px;
 }
@@ -175,7 +194,8 @@ ul {
   padding-left: 80px;
   min-height: 620px;
   position: relative;
-  background: url('/EVKLID/img/low-angle-photo-of-balconies-2462015\ 1.jpg') center center no-repeat;
+  background: url("/EVKLID/img/low-angle-photo-of-balconies-2462015\ 1.jpg")
+    center center no-repeat;
   background-size: cover;
   border-radius: 32px;
 }
@@ -186,7 +206,7 @@ ul {
   font-weight: 800;
   font-size: 70px;
   line-height: 85px;
-  color: #FFF;
+  color: #fff;
 }
 
 .hero__description {
@@ -201,7 +221,6 @@ ul {
   font-size: 23px;
   line-height: 29px;
 }
-
 
 /* ABOUT */
 
@@ -230,7 +249,7 @@ ul {
   min-height: 623px;
   height: 100%;
   /* padding-top: 426px; */
-  background: url('/EVKLID/img/Rectangle\ 2.jpg') left center no-repeat;
+  background: url("/EVKLID/img/Rectangle\ 2.jpg") left center no-repeat;
   background-size: cover;
   background-color: transparent;
   border-radius: 32px;
@@ -245,7 +264,7 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(0, 0, 0, .5);
+  background: rgba(0, 0, 0, 0.5);
   border-radius: 32px;
 }
 
@@ -259,7 +278,7 @@ ul {
   display: flex;
   align-items: center;
   padding: 65px 60px;
-  border: 1px solid #CACACA;
+  border: 1px solid #cacaca;
   border-radius: 32px;
 }
 
@@ -332,7 +351,7 @@ ul {
 
 .faq__title {
   padding-bottom: 32px;
-  border-bottom: 1px solid #CACACA;
+  border-bottom: 1px solid #cacaca;
 }
 
 .faq__question {
@@ -341,7 +360,7 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #CACACA;
+  border-bottom: 1px solid #cacaca;
 }
 
 .question__heading {
@@ -349,7 +368,6 @@ ul {
   font-size: 24px;
   line-height: 32px;
 }
-
 
 /* FOOTER */
 .footer {
@@ -372,7 +390,7 @@ ul {
   font-weight: 600;
   font-size: 18px;
   line-height: 36px;
-  color: #CACACA;
+  color: #cacaca;
 }
 
 .footer__socials {
@@ -384,7 +402,7 @@ ul {
 }
 
 .footer__mid__title {
-  color: #CACACA;
+  color: #cacaca;
 }
 
 .input {
@@ -393,7 +411,7 @@ ul {
   height: 60px;
   padding: 14px 24px;
   background: #414141;
-  color: #CACACA;
+  color: #cacaca;
   border-radius: 16px;
   outline: none;
   border: none;
@@ -421,7 +439,7 @@ ul {
 
 .footer__description {
   max-width: 363px;
-  color: #CACACA;
+  color: #cacaca;
 }
 
 /* MEDIA */
