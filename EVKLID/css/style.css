@@ -162,9 +162,12 @@ ul {
 }
 
 .header__logo {
+  margin-right: auto;
+}
+
+.header__logo-pic {
   width: 224px;
   height: 72px;
-  margin-right: auto;
 }
 
 .header__right {
@@ -193,6 +196,7 @@ ul {
   padding-top: 100px;
   padding-left: 80px;
   min-height: 620px;
+  max-width: 1770px;
   position: relative;
   background: url("/EVKLID/img/low-angle-photo-of-balconies-2462015\ 1.jpg")
     center center no-repeat;
@@ -210,13 +214,14 @@ ul {
 }
 
 .hero__description {
-  margin-bottom: 50px;
+  margin-top: 24px;
   max-width: 850px;
   font-size: 24px;
   line-height: 29px;
 }
 
 .hero__button {
+  margin-top: 90px;
   padding: 25px 37px;
   font-size: 23px;
   line-height: 29px;
@@ -459,6 +464,30 @@ ul {
 
   .header__container {
     justify-content: space-between;
+  }
+
+  .header__logo-pic {
+    width: 150px;
+    height: 48px;
+  }
+
+  .main {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .header__container {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .hero__container {
+    padding: 160px 77px;
   }
 }
 
