@@ -133,14 +133,6 @@ ul {
   font-size: 24px;
 }
 
-.work__content__right {
-  width: 870px;
-  height: 460px;
-  background: url("/EVKLID/img/Rectangle\ 18.jpg") center center no-repeat;
-  background-size: cover;
-  border-radius: 32px;
-}
-
 /* HEADER */
 
 .header {
@@ -155,6 +147,8 @@ ul {
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .burger {
@@ -191,6 +185,12 @@ ul {
 }
 
 /* HERO */
+
+.hero {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 .hero__container {
   margin-top: 50px;
   padding-top: 100px;
@@ -253,7 +253,6 @@ ul {
   position: relative;
   min-height: 623px;
   height: 100%;
-  /* padding-top: 426px; */
   background: url("/EVKLID/img/Rectangle\ 2.jpg") left center no-repeat;
   background-size: cover;
   background-color: transparent;
@@ -327,7 +326,7 @@ ul {
 }
 
 .work__content {
-  margin-top: 45px;
+  margin-top: 50px;
   display: flex;
   justify-content: space-between;
 }
@@ -335,6 +334,7 @@ ul {
 .work__content__left {
   max-width: 760px;
 }
+
 
 .work__step-description {
   margin-top: 8px;
@@ -346,6 +346,22 @@ ul {
 
 .work__button:not(:first-child) {
   margin-left: 32px;
+}
+
+.work__content__block {
+  flex: 1 1 calc(50% - 50px);
+}
+
+.work__content__right {
+  margin-left: 50px;
+  max-width: 870px;
+}
+
+.work__content__img {
+  height: 100%;
+  background: url("/EVKLID/img/Rectangle\ 18.jpg") center center no-repeat;
+  background-size: cover;
+  border-radius: 32px;
 }
 
 /* FAQ */
@@ -462,10 +478,18 @@ ul {
     flex-direction: column;
     text-align: center;
   }
+
+  .about__column:last-child {
+    margin-left: 30px;
+  }
+
+  .work__content__left {
+    max-width: calc(50% - 50px);
+  }
 }
 
 @media (max-width: 1200px) {
-  .nav-list {
+  .header__nav-list {
     display: none;
   }
 
@@ -477,26 +501,17 @@ ul {
     margin: 0;
   }
 
-  .header__container {
-    justify-content: space-between;
-  }
-
   .header__logo-pic {
     width: 150px;
     height: 48px;
   }
 
-  .main {
+  .container {
     padding-left: 50px;
     padding-right: 50px;
   }
 
-  .container {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .header__container {
+  .hero {
     padding-left: 50px;
     padding-right: 50px;
   }
@@ -517,9 +532,17 @@ ul {
     margin-top: 32px;
   }
 
+  .banner {
+    min-height: 640px;
+  }
+
   .about__block {
     flex-direction: row;
     padding-left: 77px;
     text-align: left;
+  }
+
+  .work__content__left {
+    max-width: 440px;
   }
 }
