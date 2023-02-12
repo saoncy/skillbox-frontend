@@ -147,8 +147,6 @@ ul {
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  padding-left: 50px;
-  padding-right: 50px;
 }
 
 .burger {
@@ -157,6 +155,7 @@ ul {
 
 .header__logo {
   margin-right: auto;
+  transform: translateY(2px);
 }
 
 .header__logo-pic {
@@ -172,12 +171,23 @@ ul {
   display: flex;
 }
 
+.header__nav-list {
+  transform: translateY(1px);
+}
+
 .nav-list__item {
-  margin-right: 85px;
   font-weight: 600;
   font-size: 18px;
   line-height: 22px;
   color: #333333;
+}
+
+.nav-list__item:not(:last-child) {
+  margin-right: 86px;
+}
+
+.nav-list__item:last-child {
+  margin-right: 260px;
 }
 
 .burger {
@@ -235,7 +245,7 @@ ul {
 
 .about__description {
   margin-top: 20px;
-  max-width: 1250px;
+  max-width: 1230px;
 }
 
 .about__content {
@@ -366,7 +376,7 @@ ul {
 /* FAQ */
 
 .faq__container {
-  margin-top: 100px;
+  margin-top: 111px;
 }
 
 .faq__title {
