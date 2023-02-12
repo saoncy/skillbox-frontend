@@ -376,8 +376,8 @@ ul {
 }
 
 .faq__question {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 39px;
+  padding-bottom: 39px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -385,6 +385,7 @@ ul {
 }
 
 .question__heading {
+  margin: 0;
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
@@ -532,6 +533,10 @@ ul {
     margin-top: 32px;
   }
 
+  .about__column:last-child {
+    margin-left: 0;
+  }
+
   .banner {
     min-height: 640px;
   }
@@ -544,5 +549,11 @@ ul {
 
   .work__content__left {
     max-width: 440px;
+  }
+
+  .question__heading {
+    font-size: 20px;
+    line-height: 32px;
+    max-width: 750px;
   }
 }
