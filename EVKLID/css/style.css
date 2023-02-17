@@ -208,7 +208,7 @@ ul {
   min-height: 620px;
   max-width: 1770px;
   position: relative;
-  background: url("/EVKLID/img/low-angle-photo-of-balconies-2462015\ 1.jpg")
+  background: url("../img/low-angle-photo-of-balconies-2462015\ 1.jpg")
     center center no-repeat;
   background-size: cover;
   border-radius: 32px;
@@ -261,9 +261,7 @@ ul {
 
 .banner {
   position: relative;
-  min-height: 623px;
-  height: 100%;
-  background: url("/EVKLID/img/Rectangle\ 2.jpg") left center no-repeat;
+  background: url("../img/Rectangle\ 2.jpg") left center no-repeat;
   background-size: cover;
   background-color: transparent;
   border-radius: 32px;
@@ -341,6 +339,10 @@ ul {
   justify-content: space-between;
 }
 
+.work__step-heading {
+  line-height: 32px;
+}
+
 .work__content__left {
   max-width: 760px;
 }
@@ -368,7 +370,7 @@ ul {
 
 .work__content__img {
   height: 100%;
-  background: url("/EVKLID/img/Rectangle\ 18.jpg") center center no-repeat;
+  background: url("../img/Rectangle\ 18.jpg") center center no-repeat;
   background-size: cover;
   border-radius: 32px;
 }
@@ -437,7 +439,7 @@ ul {
 }
 
 .input {
-  display: block;
+  display: inline-block;
   width: 570px;
   height: 60px;
   padding: 14px 24px;
@@ -577,5 +579,85 @@ ul {
   .footer__container {
     padding-top: 50px;
     padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 870px) {
+  .hero__container {
+    padding: 160px 40px;
+  }
+
+  .hero__heading {
+    width: 100%;
+    font-size: 50px;
+    line-height: 61px;
+  }
+
+  .hero__description {
+    margin-top: 16px;
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  .hero__button {
+    margin-top: 60px;
+  }
+
+  .banner {
+    min-height: 650px;
+  }
+
+  .footer__container {
+    flex-direction: column-reverse;
+  }
+
+  .footer-list {
+    display: none;
+  }
+
+  .footer__socials {
+    margin-top: 16px;
+  }
+
+  .footer__mid {
+    margin-bottom: 50px;
+  }
+
+  .button_submit {
+    margin-left: 150px;
+    margin-right: 0;
+  }
+
+  .about__block {
+    padding: 35px 40px;
+  }
+
+  .about__block-logo {
+    margin-right: 16px;
+  }
+
+  .work__content {
+    flex-direction: column-reverse;
+  }
+
+  .work__content__right {
+    margin-left: 0;
+    margin-bottom: 38px;
+  }
+
+  .work__content__img {
+    min-height: 284px;
+  }
+
+  .work__content__left {
+    max-width: 100%;
+  }
+
+  .work__buttons {
+    margin-top: 25px;
+  }
+
+  .question__heading {
+    max-width: 570px;
   }
 }
