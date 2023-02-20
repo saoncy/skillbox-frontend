@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 12.3</title>
+  <script src="index.js"></script>
+  <style>
+    .menu {
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 400px;
+      padding: 40px;
+      background-color: #f2f2f2;
+      transition: transform .3s ease-in-out;
+      transform: translateX(-101%);
+    }
+
+    .is-active {
+      transform: none;
+    }
+
+    .burger {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      background-color: #f2f2f2;
+      border: 1px solid #333;
+      cursor: pointer;
+    }
+
+    .alert {
+      outline: 3px solid rgba(255, 0, 0, .3);
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="menu" class="menu">
+    <ul>
+      <li>Menu 1</li>
+      <li>Menu 2</li>
+      <li>Menu 3</li>
+    </ul>
+  </div>
+  <div id="burger" class="burger"></div>
+
+  <p class="text">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus perspiciatis dolorum doloribus quo, fugit adipisci repudiandae sint atque dolorem sapiente corrupti rerum ea possimus, voluptate eligendi necessitatibus ipsam nemo porro!
+  </p>
+  <p class="text">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus perspiciatis dolorum doloribus quo, fugit adipisci repudiandae sint atque dolorem sapiente corrupti rerum ea possimus, voluptate eligendi necessitatibus ipsam nemo porro!
+  </p>
+  <p class="text">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus perspiciatis dolorum doloribus quo, fugit adipisci repudiandae sint atque dolorem sapiente corrupti rerum ea possimus, voluptate eligendi necessitatibus ipsam nemo porro!
+  </p>
+  <p class="text">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus perspiciatis dolorum doloribus quo, fugit adipisci repudiandae sint atque dolorem sapiente corrupti rerum ea possimus, voluptate eligendi necessitatibus ipsam nemo porro!
+  </p>
+  <p class="text">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus perspiciatis dolorum doloribus quo, fugit adipisci repudiandae sint atque dolorem sapiente corrupti rerum ea possimus, voluptate eligendi necessitatibus ipsam nemo porro!
+  </p>
+  <p class="text">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus perspiciatis dolorum doloribus quo, fugit adipisci repudiandae sint atque dolorem sapiente corrupti rerum ea possimus, voluptate eligendi necessitatibus ipsam nemo porro!
+  </p>
+</body>
+</html>
