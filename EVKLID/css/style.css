@@ -455,17 +455,26 @@ ul {
 .faq__question {
   padding-top: 39px;
   padding-bottom: 39px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   border-bottom: 1px solid #cacaca;
+}
+
+.question__accordion-header {
+  display: flex;
+  align-items: center;
 }
 
 .question__heading {
   margin: 0;
+  margin-right: auto;
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
+}
+
+.question__content {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  max-width: 1000px;
 }
 
 /* FOOTER */
