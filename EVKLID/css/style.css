@@ -140,6 +140,16 @@ ul {
   bottom: 30px;
 }
 
+.swiper-pagination-bullet {
+  height: 15px;
+  width: 15px;
+  background-color: #CACACA;
+}
+
+.swiper-pagination-bullet {
+  background-color: #FFFFFF;
+}
+
 /* HEADER */
 
 .header {
@@ -754,6 +764,15 @@ ul {
     font-size: 12px;
     line-height: 15px;
     border-radius: 8px;
+  }
+
+  .swiper-horizontal > .swiper-pagination {
+    bottom: 15px;
+  }
+
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
   }
 
   .hero {
