@@ -143,11 +143,11 @@ ul {
 .swiper-pagination-bullet {
   height: 15px;
   width: 15px;
-  background-color: #CACACA;
+  background-color: #cacaca;
 }
 
 .swiper-pagination-bullet {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 /* HEADER */
@@ -747,7 +747,6 @@ ul {
   }
 }
 
-
 @media (max-width: 600px) {
   .container {
     padding-left: 15px;
@@ -834,7 +833,7 @@ ul {
 
   .banner__button {
     margin-top: 12px;
-    color: #FF9900;
+    color: #ff9900;
   }
 
   .about__block {
@@ -882,12 +881,12 @@ ul {
   }
 
   .work__step-heading {
-      line-height: 32px;
+    line-height: 32px;
   }
 
   .block__heading {
-      font-weight: 500;
-      font-size: 18px;
+    font-weight: 500;
+    font-size: 18px;
   }
 
   .description {
@@ -901,7 +900,7 @@ ul {
 
   .work__button:not(:first-child) {
     margin-left: 10px;
-}
+  }
 
   .button_theme_empty_thin {
     padding: 12px 32px;
