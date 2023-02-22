@@ -390,8 +390,7 @@ ul {
 
 .work__content__img {
   height: 100%;
-  background: url("../img/Rectangle\ 18.jpg") center center no-repeat;
-  background-size: cover;
+  width: 100%;
   border-radius: 32px;
 }
 
@@ -656,7 +655,7 @@ ul {
     margin-right: 16px;
   }
 
-  .work__content {
+  .work__content-active {
     flex-direction: column-reverse;
   }
 
