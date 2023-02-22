@@ -7,7 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Евклид - Проектные системы</title>
   <link rel="stylesheet" href="./css/normalize.css">
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+  />
   <link rel="stylesheet" href="./css/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 </head>
 
 <body>
@@ -43,11 +49,25 @@
   <main class="main">
     <section class="hero">
       <div class="container hero__container">
-        <h1 class="hero__heading">Проектные решения любой сложности</h1>
-        <p class="bold-descr hero__description">
-          Есть над чем задуматься: базовые сценарии поведения пользователей и по сей день остаются уделом проектантов
-        </p>
-        <button class="button button_theme_filled hero__button">Заказать расчёт</button>
+        <div class="hero__info">
+          <h1 class="hero__heading">Проектные решения любой сложности</h1>
+          <p class="bold-descr hero__description">
+            Есть над чем задуматься: базовые сценарии поведения пользователей и по сей день остаются уделом проектантов
+          </p>
+          <button class="button button_theme_filled hero__button">Заказать расчёт</button>
+        </div>
+        <div class="swiper hero__swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper hero__wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide hero__background-first"></div>
+            <div class="swiper-slide hero__background-second"></div>
+            <div class="swiper-slide hero__background-third"></div>
+            ...
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
       </div>
     </section>
     <section class="about">
@@ -294,6 +314,7 @@
   </footer>
 
   <script src="./js/tabs.js"></script>
+  <script src="./js/swiper.js"></script>
 </body>
 
 </html>

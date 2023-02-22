@@ -133,6 +133,13 @@ ul {
   font-size: 24px;
 }
 
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 30px;
+}
+
 /* HEADER */
 
 .header {
@@ -208,10 +215,50 @@ ul {
   min-height: 620px;
   max-width: 1770px;
   position: relative;
-  background: url("../img/low-angle-photo-of-balconies-2462015\ 1.jpg")
-    center center no-repeat;
-  background-size: cover;
   border-radius: 32px;
+}
+
+.hero__info {
+  position: relative;
+  z-index: 10;
+}
+
+.hero__wrapper {
+  min-height: inherit;
+}
+
+.hero__swiper {
+  position: absolute;
+  min-height: inherit;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 32px;
+}
+
+.hero__background-first {
+  background-image: url("../img/low-angle-photo-of-balconies-2462015\ 1.jpg");
+  min-height: inherit;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero__background-second {
+  background-image: url("../img/brown-and-blue-glass-building-2093076\ 2.jpg");
+  min-height: inherit;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero__background-third {
+  background-image: url("../img/apartment-apartment-building-architecture-building-323705\ 2.jpg");
+  min-height: inherit;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .hero__heading {
