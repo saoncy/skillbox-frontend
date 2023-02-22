@@ -116,31 +116,55 @@
       <div class="container work__container">
         <h2 class="title work__title">Как мы работаем</h2>
         <ul class="nav-list work__step-nav">
-          <li class="work__step">1 шаг</li>
-          <li class="work__step">2 шаг</li>
-          <li class="work__step">3 шаг</li>
-          <li class="work__step">4 шаг</li>
+          <li class="work__step tabs__btn" data-path="1">1 шаг</li>
+          <li class="work__step tabs__btn" data-path="2">2 шаг</li>
+          <li class="work__step tabs__btn" data-path="3">3 шаг</li>
+          <li class="work__step tabs__btn" data-path="4">4 шаг</li>
         </ul>
         <div class="work__content">
-          <div class="work__content__block work__content__left">
-            <h3 class="block__heading work__step-heading">Проводим консультацию</h3>
-            <p class="description work__step-description">
-              Влечёт за собой процесс внедрения и модернизации приоритизации разума над эмоциями. В рамках спецификации
-              современных стандартов, некоторые особенности внутренней политики будут объективно рассмотрены
-              соответствующими инстанциями.
-              <br>А также представители современных социальных резервов, инициированные исключительно синтетически,
-              ограничены исключительно образом мышления. Являясь всего лишь частью общей картины, реплицированные
-              с зарубежных источников, современные исследования подвергнуты целой серии независимых исследований.
-              Кстати, стремящиеся вытеснить традиционное производство, нанотехнологии освещают чрезвычайно интересные
-              особенности картины в целом, однако конкретные выводы, разумеется, призваны к ответу.
-            </p>
-            <div class="work__buttons">
-              <button class="button button_theme_filled work__button">Подробнее</button>
-              <button class="button button_theme_empty_thin work__button">Договор</button>
+          <div class="work__content__item work__content-active" data-target="1">
+            <div class="work__content__block work__content__left">
+              <h3 class="block__heading work__step-heading">Проводим консультацию</h3>
+              <p class="description work__step-description">
+                Влечёт за собой процесс внедрения и модернизации приоритизации разума над эмоциями. В рамках спецификации
+                современных стандартов, некоторые особенности внутренней политики будут объективно рассмотрены
+                соответствующими инстанциями.
+                <br>А также представители современных социальных резервов, инициированные исключительно синтетически,
+                ограничены исключительно образом мышления. Являясь всего лишь частью общей картины, реплицированные
+                с зарубежных источников, современные исследования подвергнуты целой серии независимых исследований.
+                Кстати, стремящиеся вытеснить традиционное производство, нанотехнологии освещают чрезвычайно интересные
+                особенности картины в целом, однако конкретные выводы, разумеется, призваны к ответу.
+              </p>
+              <div class="work__buttons">
+                <button class="button button_theme_filled work__button">Подробнее</button>
+                <button class="button button_theme_empty_thin work__button">Договор</button>
+              </div>
+            </div>
+            <div class="work__content__block work__content__right">
+              <div class="work__content__img"></div>
             </div>
           </div>
-          <div class="work__content__block work__content__right">
-            <div class="work__content__img"></div>
+          <div class="work__content__item work__content-active" data-target="2">
+            <div class="work__content__block work__content__left">
+              <h3 class="block__heading work__step-heading">Проводим что-то зачем-то</h3>
+              <p class="description work__step-description">
+                Влечёт за собой процесс внедрения и модернизации приоритизации разума над эмоциями. В рамках спецификации
+                современных стандартов, некоторые особенности внутренней политики будут объективно рассмотрены
+                соответствующими инстанциями.
+                <br>А также представители современных социальных резервов, инициированные исключительно синтетически,
+                ограничены исключительно образом мышления. Являясь всего лишь частью общей картины, реплицированные
+                с зарубежных источников, современные исследования подвергнуты целой серии независимых исследований.
+                Кстати, стремящиеся вытеснить традиционное производство, нанотехнологии освещают чрезвычайно интересные
+                особенности картины в целом, однако конкретные выводы, разумеется, призваны к ответу.
+              </p>
+              <div class="work__buttons">
+                <button class="button button_theme_filled work__button">Подробнее</button>
+                <button class="button button_theme_empty_thin work__button">Договор</button>
+              </div>
+            </div>
+            <div class="work__content__block work__content__right">
+              <div class="work__content__img"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -245,6 +269,8 @@
       </div>
     </div>
   </footer>
+
+  <script src="./js/tabs.js"></script>
 </body>
 
 </html>

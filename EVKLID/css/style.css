@@ -334,14 +334,29 @@ ul {
   line-height: 22px;
 }
 
+.tabs__btn {
+  cursor: pointer;
+}
+
 .work__step:not(:first-child) {
   margin-left: 86px;
 }
 
 .work__content {
   margin-top: 50px;
+}
+
+.work__content__item {
+  display: none;
+}
+
+.work__content__active {
   display: flex;
   justify-content: space-between;
+}
+
+.work__content-active {
+  display: flex;
 }
 
 .work__step-heading {
