@@ -73,6 +73,7 @@
         let localStorageItems = JSON.parse(localStorage.getItem(key));
         localStorageItems.forEach((el, ind, arr) => {
           if (el.name === item.name) {
+            if (arr.length === 1) arr = [];
             arr.splice(ind, ind)
             localStorage.setItem(key, JSON.stringify(arr));
           }
