@@ -1,0 +1,18 @@
+.container {
+  width: 1170px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.timer__container {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.timer__button {
+  margin-left: 20px;
+}
+
+.timer {
+  margin-top: 20px;
+}
