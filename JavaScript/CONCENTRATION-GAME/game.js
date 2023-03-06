@@ -128,17 +128,21 @@
   function createTimer() {
     const timerHeader = document.createElement('p');
     const timer = document.createElement('p');
+    const timerScale = document.createElement('p');
     const timerWraper = document.createElement('div');
 
-    timerHeader.classList.add('fs-2');
+    timerHeader.classList.add('fs-2', 'fw-light');
     timerHeader.textContent = 'Таймер:';
-    timer.classList.add('fs-2', 'fw-bold', 'ms-2');
+    timer.classList.add('fs-2', 'fw-semibold', 'ms-2');
     timer.textContent = '60';
     timer.setAttribute('id', 'timer');
-    timerWraper.classList.add('d-flex', 'justify-content-center');
+    timerScale.classList.add('fs-5', 'ms-1', 'fw-lighter');
+    timerScale.textContent = 'сек';
+    timerWraper.classList.add('d-flex', 'justify-content-center', 'align-items-center');
 
     timerWraper.append(timerHeader);
     timerWraper.append(timer);
+    timerWraper.append(timerScale);
 
     return {
       timerHeader,
@@ -163,7 +167,13 @@
 
       cardsList.innerHTML = '';
 
-      const cardsInRow = +gameSizeForm.input.value;
+      let cardsInRow = parseInt(gameSizeForm.input.value);
+
+      if (cardsInRow < 2 || cardsInRow > 10) {
+        cardsInRow = 4;
+        gameSizeForm.input.value = '4';
+      }
+
       for (let i = 1; i <= (cardsInRow * cardsInRow / 2); i++) {
         cardsOnTable.push(createCard(i, 1, cardsInRow));
         cardsOnTable.push(createCard(i, 2, cardsInRow));
