@@ -110,12 +110,14 @@
         }
         if (cardsOnTable[cardIndex].cardBody.textContent != cardsOnTable[i].cardBody.textContent
           && cardsOnTable[i].opened && !cardsOnTable[i].found) {
+            document.getElementById('cards').style.pointerEvents = 'none';
             cardsOnTable[cardIndex].opened = false;
             cardsOnTable[i].opened = false;
             setTimeout(() => {
               cardsOnTable[cardIndex],cardBody.style.visibility = 'hidden';
               cardsOnTable[i].cardBody.style.visibility = 'hidden';
-            }, 700);
+              document.getElementById('cards').style.pointerEvents = 'auto';
+            }, 500);
         }
       }
 
