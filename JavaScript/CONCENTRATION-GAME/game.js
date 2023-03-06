@@ -80,7 +80,7 @@
     card.setAttribute('id', `${value}${id}`);
     card.style.flexBasis = `calc(${100 / cardsInRow}% - 0.5rem)`
     card.style.height = '100px';
-    cardBody.classList.add('card-body', 'text-center', 'align-middle');
+    cardBody.classList.add('card-body', 'text-center', 'align-middle', 'fs-2');
     cardBody.textContent = value;
     cardBody.style.visibility = 'hidden';
 
@@ -128,6 +128,10 @@
         playAgainBtn.style.marginLeft = 'auto';
         playAgainBtn.style.marginRight = 'auto';
         playAgainBtn.textContent = 'Сыграть еще раз';
+        playAgainBtn.addEventListener('click', () => {
+          document.getElementById('game').innerHTML = '';
+          createConcentrationGame();
+        })
         document.getElementById('game').append(playAgainBtn);
       }
       console.log(cardsOnTable)
@@ -142,7 +146,7 @@
   }
 
 
-  function createTimer(time) {
+  function createTimer() {
     const timerHeader = document.createElement('p');
     const timer = document.createElement('p');
     const timerScale = document.createElement('p');
@@ -151,7 +155,6 @@
     timerHeader.classList.add('fs-2', 'fw-light');
     timerHeader.textContent = 'Таймер:';
     timer.classList.add('fs-2', 'fw-semibold', 'ms-2');
-    // timer.textContent = '60';
     timer.setAttribute('id', 'timer');
     timerScale.classList.add('fs-5', 'ms-1', 'fw-lighter');
     timerScale.textContent = 'сек';
