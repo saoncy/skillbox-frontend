@@ -185,6 +185,7 @@
 
     gameSizeForm.form.addEventListener('submit', ev => {
       ev.preventDefault();
+      gameSizeForm.button.disabled = true;
       stopTimer();
       cardsOnTable = [];
       pairsFound = 0;
