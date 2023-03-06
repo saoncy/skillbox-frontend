@@ -190,7 +190,7 @@
 
       let cardsInRow = parseInt(gameSizeForm.input.value);
 
-      if (cardsInRow < 2 || cardsInRow > 10 || gameSizeForm.input.value == '') {
+      if (cardsInRow < 2 || cardsInRow > 10 || gameSizeForm.input.value == '' || cardsInRow % 2 != 0) {
         cardsInRow = 4;
         gameSizeForm.input.value = '4';
       }
