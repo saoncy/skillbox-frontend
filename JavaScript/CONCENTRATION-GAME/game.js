@@ -49,6 +49,7 @@
     input.placeholder = '(от 2 до 10)';
     buttonWrapper.classList.add('input-group-append');
     button.classList.add('btn', 'btn-success');
+    button.setAttribute('id', 'submit');
     button.textContent = 'Начать игру';
 
     buttonWrapper.append(button);
@@ -116,17 +117,16 @@
               cardsOnTable[i].cardBody.style.visibility = 'hidden';
             }, 700);
         }
-      }//let playAgainBtn = document.createElement('button');
-      //   playAgainBtn.classList.add('btn', 'btn-link', 'ms-auto', 'me-auto');
-      //   playAgainBtn.textContent = 'Сыграть еще раз';
-      //   document.getElementById('game').append(playAgainBtn);
-      console.log(cardsOnTable.length / 2, pairsFound)
+      }
+
       if (pairsFound == cardsOnTable.length / 2) {
         stopTimer();
+        document.getElementById('submit').disabled = false;
         let playAgainBtn = document.createElement('button');
         playAgainBtn.classList.add('btn', 'btn-danger', 'd-block', 'mt-4', 'fs-3', 'p-2');
         playAgainBtn.style.marginLeft = 'auto';
         playAgainBtn.style.marginRight = 'auto';
+        playAgainBtn.setAttribute('id', 'play-again')
         playAgainBtn.textContent = 'Сыграть еще раз';
         playAgainBtn.addEventListener('click', () => {
           document.getElementById('game').innerHTML = '';
@@ -190,6 +190,11 @@
       cardsOnTable = [];
       pairsFound = 0;
 
+      try {
+        document.getElementById('play-again').remove();
+      } catch (error) {
+        console.log(error);
+      }
       cardsList.innerHTML = '';
 
       let cardsInRow = parseInt(gameSizeForm.input.value);
