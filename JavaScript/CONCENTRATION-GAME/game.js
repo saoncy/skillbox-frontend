@@ -1,7 +1,7 @@
 (() => {
   const GAME_TIME = 60;
   let cardsOnTable = [];
-  let openCardOnTable = false;
+  let pairsFound = 0;
   let intervalID = null;
 
   function shuffle(arr) {
@@ -29,9 +29,6 @@
   function stopTimer() {
     clearInterval(intervalID);
     intervalID = null;
-    document.getElementById('cards').innerHTML = '';
-    document.getElementById('timer').innerHTML = GAME_TIME;
-
   }
 
 
@@ -46,7 +43,7 @@
     form.style.width = '800px'
     form.style.marginRight = 'auto';
     form.style.marginLeft = 'auto';
-    inputText.classList.add('input-group-text');
+    inputText.classList.add('input-group-text', 'bg-success', 'text-white');
     inputText.textContent = 'Карточек по вертикали/горизонтали:';
     input.classList.add('form-control');
     input.placeholder = '(от 2 до 10)';
@@ -98,28 +95,41 @@
         }
       });
 
-      if (openCardOnTable) {
-        for (let i = 0; i < cardsOnTable.length; i++) {
-          if (cardsOnTable[cardIndex].cardBody.textContent == cardsOnTable[i].cardBody.textContent
-            && cardsOnTable[i].opened && cardIndex != i
-            && !cardsOnTable[i].found && !cardsOnTable[cardIndex].found) {
+      for (let i = 0; i < cardsOnTable.length; i++) {
+        if (cardsOnTable[cardIndex].cardBody.textContent == cardsOnTable[i].cardBody.textContent
+          && cardsOnTable[i].opened && cardIndex != i
+          && !cardsOnTable[i].found && !cardsOnTable[cardIndex].found) {
+            pairsFound++;
             cardsOnTable[i].found = true;
             cardsOnTable[cardIndex].found = true;
-          }
-          if (cardsOnTable[cardIndex].cardBody.textContent != cardsOnTable[i].cardBody.textContent
-            && cardsOnTable[i].opened && !cardsOnTable[i].found) {
+            cardsOnTable[i].card.classList.add('bg-success', 'text-white');
+            cardsOnTable[cardIndex].card.classList.add('bg-success', 'text-white');
+            cardsOnTable[i].card.style.pointerEvents = 'none'
+            cardsOnTable[cardIndex].card.style.pointerEvents = 'none'
+        }
+        if (cardsOnTable[cardIndex].cardBody.textContent != cardsOnTable[i].cardBody.textContent
+          && cardsOnTable[i].opened && !cardsOnTable[i].found) {
             cardsOnTable[cardIndex].opened = false;
             cardsOnTable[i].opened = false;
             setTimeout(() => {
               cardsOnTable[cardIndex],cardBody.style.visibility = 'hidden';
               cardsOnTable[i].cardBody.style.visibility = 'hidden';
             }, 700);
-            openCardOnTable = false;
-          }
         }
+      }//let playAgainBtn = document.createElement('button');
+      //   playAgainBtn.classList.add('btn', 'btn-link', 'ms-auto', 'me-auto');
+      //   playAgainBtn.textContent = 'Сыграть еще раз';
+      //   document.getElementById('game').append(playAgainBtn);
+      console.log(cardsOnTable.length / 2, pairsFound)
+      if (pairsFound == cardsOnTable.length / 2) {
+        stopTimer();
+        let playAgainBtn = document.createElement('button');
+        playAgainBtn.classList.add('btn', 'btn-danger', 'd-block', 'mt-4', 'fs-3', 'p-2');
+        playAgainBtn.style.marginLeft = 'auto';
+        playAgainBtn.style.marginRight = 'auto';
+        playAgainBtn.textContent = 'Сыграть еще раз';
+        document.getElementById('game').append(playAgainBtn);
       }
-
-      openCardOnTable = true;
       console.log(cardsOnTable)
     });
 
@@ -132,7 +142,7 @@
   }
 
 
-  function createTimer() {
+  function createTimer(time) {
     const timerHeader = document.createElement('p');
     const timer = document.createElement('p');
     const timerScale = document.createElement('p');
@@ -141,7 +151,7 @@
     timerHeader.classList.add('fs-2', 'fw-light');
     timerHeader.textContent = 'Таймер:';
     timer.classList.add('fs-2', 'fw-semibold', 'ms-2');
-    timer.textContent = '60';
+    // timer.textContent = '60';
     timer.setAttribute('id', 'timer');
     timerScale.classList.add('fs-5', 'ms-1', 'fw-lighter');
     timerScale.textContent = 'сек';
@@ -172,6 +182,9 @@
 
     gameSizeForm.form.addEventListener('submit', ev => {
       ev.preventDefault();
+      stopTimer();
+      cardsOnTable = [];
+      pairsFound = 0;
 
       cardsList.innerHTML = '';
 
@@ -192,6 +205,8 @@
       cardsOnTable.forEach(el => {
         cardsList.append(el.card);
       });
+      timer.timer.textContent = `${60 * (cardsInRow / 4)}`;
+      gameSizeForm.input.value = '';
       startTimer();
     });
   }
