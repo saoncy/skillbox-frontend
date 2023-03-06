@@ -1,12 +1,37 @@
 (() => {
+  const GAME_TIME = 60;
   let cardsOnTable = [];
   let openCardOnTable = false;
+  let intervalID = null;
 
   function shuffle(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1));
       [arr[i], arr[j]] = [arr[j], arr[i]];
     }
+  }
+
+  function startTimer() {
+    if (!intervalID) {
+      intervalID = setInterval(runTimer, 1000);
+    } else {
+      stopTimer();
+      startTimer();
+    }
+  }
+
+  function runTimer() {
+    let timer = document.getElementById('timer');
+    timer.textContent = parseInt(timer.textContent) - 1;
+    if (parseInt(timer.textContent) == 0) stopTimer();
+  }
+
+  function stopTimer() {
+    clearInterval(intervalID);
+    intervalID = null;
+    document.getElementById('cards').innerHTML = '';
+    document.getElementById('timer').innerHTML = GAME_TIME;
+
   }
 
 
@@ -37,6 +62,7 @@
   function createCardsList() {
     const cardsList = document.createElement('div');
     cardsList.classList.add('d-flex', 'justify-content-between', 'flex-wrap');
+    cardsList.setAttribute('id', 'cards');
     return cardsList;
   }
 
@@ -81,7 +107,7 @@
               cardsOnTable[cardIndex],cardBody.style.visibility = 'hidden';
               cardsOnTable[i].cardBody.style.visibility = 'hidden';
             }, 700);
-
+            openCardOnTable = false;
           }
         }
       }
@@ -99,11 +125,36 @@
   }
 
 
+  function createTimer() {
+    const timerHeader = document.createElement('p');
+    const timer = document.createElement('p');
+    const timerWraper = document.createElement('div');
+
+    timerHeader.classList.add('fs-2');
+    timerHeader.textContent = 'Таймер:';
+    timer.classList.add('fs-2', 'fw-bold', 'ms-2');
+    timer.textContent = '60';
+    timer.setAttribute('id', 'timer');
+    timerWraper.classList.add('d-flex', 'justify-content-center');
+
+    timerWraper.append(timerHeader);
+    timerWraper.append(timer);
+
+    return {
+      timerHeader,
+      timer,
+      timerWraper,
+    };
+
+  }
+
   function createConcentrationGame() {
     const container = document.getElementById('game');
     const gameSizeForm = createGameSizeForm();
     const cardsList = createCardsList();
+    const timer = createTimer();
 
+    container.append(timer.timerWraper);
     container.append(gameSizeForm.form);
     container.append(cardsList);
 
@@ -122,7 +173,8 @@
       console.log(cardsOnTable)
       cardsOnTable.forEach(el => {
         cardsList.append(el.card);
-      })
+      });
+      startTimer();
     });
   }
 
