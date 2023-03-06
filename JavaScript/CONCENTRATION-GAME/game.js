@@ -38,17 +38,24 @@
   function createGameSizeForm() {
     const form = document.createElement('form');
     const input = document.createElement('input');
+    const inputText = document.createElement('span');
     const buttonWrapper = document.createElement('div');
     const button = document.createElement('button');
 
     form.classList.add('input-group', 'mb-3', 'mt-3');
+    form.style.width = '800px'
+    form.style.marginRight = 'auto';
+    form.style.marginLeft = 'auto';
+    inputText.classList.add('input-group-text');
+    inputText.textContent = 'Карточек по вертикали/горизонтали:';
     input.classList.add('form-control');
-    input.placeholder = 'Введите количество карточек по вертикали/горизонтали (от 2 до 10)';
+    input.placeholder = '(от 2 до 10)';
     buttonWrapper.classList.add('input-group-append');
-    button.classList.add('btn', 'btn-primary');
+    button.classList.add('btn', 'btn-success');
     button.textContent = 'Начать игру';
 
     buttonWrapper.append(button);
+    form.append(inputText);
     form.append(input);
     form.append(buttonWrapper);
 
@@ -154,6 +161,7 @@
 
   function createConcentrationGame() {
     const container = document.getElementById('game');
+
     const gameSizeForm = createGameSizeForm();
     const cardsList = createCardsList();
     const timer = createTimer();
@@ -169,7 +177,7 @@
 
       let cardsInRow = parseInt(gameSizeForm.input.value);
 
-      if (cardsInRow < 2 || cardsInRow > 10) {
+      if (cardsInRow < 2 || cardsInRow > 10 || gameSizeForm.input.value == '') {
         cardsInRow = 4;
         gameSizeForm.input.value = '4';
       }
