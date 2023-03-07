@@ -23,7 +23,11 @@
   function runTimer() {
     let timer = document.getElementById('timer');
     timer.textContent = parseInt(timer.textContent) - 1;
-    if (parseInt(timer.textContent) == 0) stopTimer();
+    if (parseInt(timer.textContent) == 0) {
+      stopTimer();
+      document.getElementById('cards').style.pointerEvents = 'none';
+      document.getElementById('game').append(createPlayAgainButton());
+    }
   }
 
   function stopTimer() {
@@ -62,6 +66,23 @@
       input,
       button,
     };
+  }
+
+  function createPlayAgainButton() {
+    let playAgainBtn = document.createElement('button');
+
+    playAgainBtn.classList.add('btn', 'btn-danger', 'd-block', 'mt-4', 'fs-3', 'p-2');
+    playAgainBtn.style.marginLeft = 'auto';
+    playAgainBtn.style.marginRight = 'auto';
+    playAgainBtn.setAttribute('id', 'play-again')
+    playAgainBtn.textContent = 'Сыграть еще раз';
+
+    playAgainBtn.addEventListener('click', () => {
+      document.getElementById('game').innerHTML = '';
+      createConcentrationGame();
+    });
+
+    return playAgainBtn;
   }
 
   function createCardsList() {
@@ -124,17 +145,7 @@
       if (pairsFound == cardsOnTable.length / 2) {
         stopTimer();
         document.getElementById('submit').disabled = false;
-        let playAgainBtn = document.createElement('button');
-        playAgainBtn.classList.add('btn', 'btn-danger', 'd-block', 'mt-4', 'fs-3', 'p-2');
-        playAgainBtn.style.marginLeft = 'auto';
-        playAgainBtn.style.marginRight = 'auto';
-        playAgainBtn.setAttribute('id', 'play-again')
-        playAgainBtn.textContent = 'Сыграть еще раз';
-        playAgainBtn.addEventListener('click', () => {
-          document.getElementById('game').innerHTML = '';
-          createConcentrationGame();
-        })
-        document.getElementById('game').append(playAgainBtn);
+        document.getElementById('game').append(createPlayAgainButton());
       }
       console.log(cardsOnTable)
     });
@@ -158,6 +169,7 @@
     timerHeader.textContent = 'Таймер:';
     timer.classList.add('fs-2', 'fw-semibold', 'ms-2');
     timer.setAttribute('id', 'timer');
+    timer.textContent = '0';
     timerScale.classList.add('fs-5', 'ms-1', 'fw-lighter');
     timerScale.textContent = 'сек';
     timerWraper.classList.add('d-flex', 'justify-content-center', 'align-items-center');
@@ -187,8 +199,11 @@
 
     gameSizeForm.form.addEventListener('submit', ev => {
       ev.preventDefault();
-      gameSizeForm.button.disabled = true;
       stopTimer();
+
+      gameSizeForm.button.disabled = true;
+      document.getElementById('cards').style.pointerEvents = 'auto';
+
       cardsOnTable = [];
       pairsFound = 0;
 
