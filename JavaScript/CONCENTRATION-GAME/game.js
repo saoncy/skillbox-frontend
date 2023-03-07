@@ -88,6 +88,7 @@
   function createCardsList() {
     const cardsList = document.createElement('div');
     cardsList.classList.add('d-flex', 'justify-content-between', 'flex-wrap');
+    cardsList.style.height = '70vh';
     cardsList.setAttribute('id', 'cards');
     return cardsList;
   }
@@ -98,11 +99,11 @@
     const cardBody = document.createElement('div');
     let cardIndex;
 
-    card.classList.add('card', 'mb-2');
+    card.classList.add('card', 'mb-2', 'h-auto', 'd-flex');
     card.setAttribute('id', `${value}${id}`);
     card.style.flexBasis = `calc(${100 / cardsInRow}% - 0.5rem)`
     card.style.height = '100px';
-    cardBody.classList.add('card-body', 'text-center', 'align-middle', 'fs-2');
+    cardBody.classList.add('card-body', 'text-center', 'align-middle', 'fs-2', 'd-flex', 'justify-content-center', 'align-items-center');
     cardBody.textContent = value;
     cardBody.style.visibility = 'hidden';
 
