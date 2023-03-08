@@ -129,12 +129,14 @@
 
   function createStudentTable() {
     const table = document.createElement('table');
+    const tableBody = document.createElement('tbody');
     const tableHeader = createTableHeader(['Fullname', 'Faculty', 'DOB', 'College']);
 
     table.classList.add('table', 'table-dark', 'table-hover')
     table.style.width = '70%';
 
     table.append(tableHeader);
+    table.append(tableBody);
     document.getElementById('app').append(table);
   }
 
@@ -157,27 +159,38 @@
   }
 
   function addStudent(name, middleName, surname, dob, doa, faculty) {
-    students.push({
+    const student = {
       name: name,
       surname, surname,
       middleName: middleName,
       dob: dob,
       doa: doa,
       faculty: faculty
-    });
+    };
+
+    students.push(student);
+
+    const row = document.createElement('tr');
+    for (let prop in info = createStudentRow(student)) {
+      const column = document.createElement('td');
+      column.textContent = info[prop];
+      row.append(column);
+    }
+
+    document.querySelector('tbody').append(row);
   }
 
-  // function addStudent(name, middleName, surname, dob, doa, faculty) {
-  //   students.push({
-  //     fullname: surname + ' ' + name + ' ' + middleName,
-  //     faculty: faculty,
-  //     dob: `${dob.getDate()}.${dob.getMonth() + 1}.${dob.getFullYear()}`,
-  //     doa: `${doa.getFullYear()}-${doa.getFullYear() + 4} (${new Date().getFullYear() - doa.getFullYear() > 4
-  //       || (new Date.getFullYear() == doa.getFullYear() + 4 && new Date.getMonth() + 1 > 9)
-  //       ? 'закончил'
-  //       : new Date().getFullYear() - doa.getFullYear() + ' курс'})`,
-  //   })
-  // }
+  function createStudentRow(student) {
+    return {
+      fullname: student.surname + ' ' + student.name + ' ' + student.middleName,
+      faculty: student.faculty,
+      dob: `${student.dob.getDate()}.${student.dob.getMonth() + 1}.${student.dob.getFullYear()}`,
+      doa: `${student.doa.getFullYear()}-${student.doa.getFullYear() + 4} (${new Date().getFullYear() - student.doa.getFullYear() > 4
+        || (new Date.getFullYear() == student.doa.getFullYear() + 4 && new Date.getMonth() + 1 > 9)
+        ? 'закончил'
+        : new Date().getFullYear() - student.doa.getFullYear() + ' курс'})`,
+    };
+  }
 
   function clearFormMessages() {
     Array.from(document.querySelectorAll('.form-control')).forEach(el => {
