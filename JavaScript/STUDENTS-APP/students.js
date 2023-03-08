@@ -1,4 +1,6 @@
 (() => {
+  const students = [];
+
   function createStudentForm() {
     createStudentTable();
     const form = document.createElement('form');
@@ -59,7 +61,7 @@
       }
       if (dateOfAdmission.input.value.trim() === ''
       || dateOfAdmission.input.valueAsDate.getFullYear() < 2000
-      || dateOfAdmission.input.valueAsDate.getFullYear() >= 2023) {
+      || dateOfBirth.input.valueAsDate.getFullYear() >= 2023) {
         dateOfAdmission.input.classList.add('is-invalid');
         dateOfAdmission.inputWrapper.append(createFeedback('Please enter correct date', dateOfAdmission.input.id, false));
         isInvalid = true;
@@ -78,10 +80,12 @@
         });
         isInvalid = false;
       } else {
+        addStudent(nameInput.input.value.trim(), middleNameInput.input.value.trim(), surnameInput.input.value.trim(),
+        dateOfBirth.input.valueAsDate, dateOfAdmission.input.valueAsDate, faculty.input.value.trim());
+        console.log(students);
         clearFormMessages();
         clearForms();
       }
-
     })
 
     document.getElementById('app').append(form);
@@ -152,12 +156,28 @@
     return header;
   }
 
+  function addStudent(name, middleName, surname, dob, doa, faculty) {
+    students.push({
+      fullname: surname + ' ' + name + ' ' + middleName,
+      faculty: faculty,
+      dob: `${dob.getDate()}.${dob.getMonth() + 1}.${dob.getFullYear()}`,
+      doa: `${doa.getFullYear()}-${doa.getFullYear() + 4} (${new Date().getFullYear() - doa.getFullYear() > 4
+        || (new Date.getFullYear() == doa.getFullYear() + 4 && new Date.getMonth() + 1 > 9)
+        ? 'закончил'
+        : new Date().getFullYear() - doa.getFullYear() + ' курс'})`,
+    })
+  }
+
   function clearFormMessages() {
     Array.from(document.querySelectorAll('.form-control')).forEach(el => {
       if (el.classList.contains('is-invalid') || el.classList.contains('is-valid')){
         el.classList.remove('is-invalid');
         el.classList.remove('is-valid');
-        document.getElementById(el.getAttribute('aria-describedby')).remove();
+        try {
+          document.getElementById(el.getAttribute('aria-describedby')).remove();
+        } catch (err) {
+          console.log(err);
+        }
       }
     });
   }
