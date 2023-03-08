@@ -158,15 +158,26 @@
 
   function addStudent(name, middleName, surname, dob, doa, faculty) {
     students.push({
-      fullname: surname + ' ' + name + ' ' + middleName,
-      faculty: faculty,
-      dob: `${dob.getDate()}.${dob.getMonth() + 1}.${dob.getFullYear()}`,
-      doa: `${doa.getFullYear()}-${doa.getFullYear() + 4} (${new Date().getFullYear() - doa.getFullYear() > 4
-        || (new Date.getFullYear() == doa.getFullYear() + 4 && new Date.getMonth() + 1 > 9)
-        ? 'закончил'
-        : new Date().getFullYear() - doa.getFullYear() + ' курс'})`,
-    })
+      name: name,
+      surname, surname,
+      middleName: middleName,
+      dob: dob,
+      doa: doa,
+      faculty: faculty
+    });
   }
+
+  // function addStudent(name, middleName, surname, dob, doa, faculty) {
+  //   students.push({
+  //     fullname: surname + ' ' + name + ' ' + middleName,
+  //     faculty: faculty,
+  //     dob: `${dob.getDate()}.${dob.getMonth() + 1}.${dob.getFullYear()}`,
+  //     doa: `${doa.getFullYear()}-${doa.getFullYear() + 4} (${new Date().getFullYear() - doa.getFullYear() > 4
+  //       || (new Date.getFullYear() == doa.getFullYear() + 4 && new Date.getMonth() + 1 > 9)
+  //       ? 'закончил'
+  //       : new Date().getFullYear() - doa.getFullYear() + ' курс'})`,
+  //   })
+  // }
 
   function clearFormMessages() {
     Array.from(document.querySelectorAll('.form-control')).forEach(el => {
