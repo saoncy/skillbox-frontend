@@ -1,5 +1,6 @@
 (() => {
   function createStudentForm() {
+    createStudentTable();
     const form = document.createElement('form');
     const nameInput = createInput('First name', 'Иван');
     const middleNameInput = createInput('Middle name', 'Иванович');
@@ -120,6 +121,35 @@
     document.getElementById(id).setAttribute('aria-describedby', feedbackWrapper.id);
 
     return feedbackWrapper;
+  }
+
+  function createStudentTable() {
+    const table = document.createElement('table');
+    const tableHeader = createTableHeader(['Fullname', 'Faculty', 'DOB', 'College']);
+
+    table.classList.add('table', 'table-dark', 'table-hover')
+    table.style.width = '50%';
+
+    table.append(tableHeader);
+    document.getElementById('app').append(table);
+  }
+
+  function createTableHeader(array) {
+    const header = document.createElement('thead');
+    const row = document.createElement('tr');
+
+    array.forEach(element => {
+      const column = document.createElement('th');
+      column.scope = 'col';
+      column.setAttribute('id', element.split(' ').join('').toLowerCase());
+      column.style.cursor = 'pointer';
+      column.textContent = element;
+      row.append(column);
+    });
+
+    header.append(row);
+
+    return header;
   }
 
   function clearFormMessages() {
