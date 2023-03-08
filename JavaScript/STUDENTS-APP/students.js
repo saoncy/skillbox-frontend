@@ -12,7 +12,7 @@
     const button = document.createElement('button');
 
     form.classList.add('row', 'gx-3', 'gy-4', 'needs-validation');
-    form.style.width = '50%';
+    form.style.width = '30%';
     form.noValidate = true;
     buttonWrapper.classList.add('col-12');
     button.classList.add('btn', 'btn-primary');
@@ -92,7 +92,7 @@
     const inputLabel = document.createElement('label');
     const input = document.createElement('input');
 
-    inputWrapper.classList.add(`col-md-4`);
+    inputWrapper.classList.add('col-md-6');
     inputLabel.classList.add('form-label');
     inputLabel.setAttribute('for', `${label.split(' ').join('')}`.toLowerCase());
     inputLabel.textContent = label;
@@ -128,7 +128,7 @@
     const tableHeader = createTableHeader(['Fullname', 'Faculty', 'DOB', 'College']);
 
     table.classList.add('table', 'table-dark', 'table-hover')
-    table.style.width = '50%';
+    table.style.width = '70%';
 
     table.append(tableHeader);
     document.getElementById('app').append(table);
