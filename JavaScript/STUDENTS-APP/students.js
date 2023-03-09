@@ -71,9 +71,8 @@
           faculty: inputForm.faculty.input.value.trim()
         };
 
-        const studentRecord = createStudentRecord(studentObj);
-				addStudentToTable(studentRecord);
         saveStudent(studentObj);
+				addStudentsToTable();
         clearFormMessages();
         clearForms();
       }
@@ -83,10 +82,7 @@
     students = localStorage.getItem(STORAGE_KEY);
     if (students) {
       students = JSON.parse(students);
-      students.forEach(student => {
-        const studentRecord = createStudentRecord(student);
-				addStudentToTable(studentRecord);
-      });
+      addStudentsToTable();
     }
   }
 
@@ -242,8 +238,15 @@
   }
 
 
-  function addStudentToTable(record) {
-    document.querySelector('tbody').append(record);
+  function addStudentsToTable() {
+    const tableBody = document.querySelector('tbody');
+
+    tableBody.innerHTML = '';
+
+    students.forEach(el => {
+      const studentRecord = createStudentRecord(el);
+      tableBody.append(studentRecord);
+    })
   }
 
 
