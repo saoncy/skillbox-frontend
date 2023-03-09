@@ -295,9 +295,9 @@
     getLatestData();
 
     students.sort((a, b) => {
-      if ([a.surname, a.name, a.middleName].join(' ') < [b.surname, b.name, b.middleName].join(' ')) return -1;
-      if ([a.surname, a.name, a.middleName].join(' ') > [b.surname, b.name, b.middleName].join(' ')) return 1;
-      if ([a.surname, a.name, a.middleName].join(' ') = [b.surname, b.name, b.middleName].join(' ')) return 0;
+      if ([a.surname, a.name, a.middleName].join(' ').toLowerCase() < [b.surname, b.name, b.middleName].join(' ').toLowerCase()) return -1;
+      if ([a.surname, a.name, a.middleName].join(' ').toLowerCase() > [b.surname, b.name, b.middleName].join(' ').toLowerCase()) return 1;
+      if ([a.surname, a.name, a.middleName].join(' ').toLowerCase() = [b.surname, b.name, b.middleName].join(' ').toLowerCase()) return 0;
     });
 
     addStudentsToTable();
@@ -309,9 +309,9 @@
     getLatestData();
 
     students.sort((a, b) => {
-      if (a.faculty < b.faculty) return -1;
-      if (a.faculty > b.faculty) return 1;
-      if (a.faculty = b.faculty) return 0;
+      if (a.faculty.toLowerCase() < b.faculty.toLowerCase()) return -1;
+      if (a.faculty.toLowerCase() > b.faculty.toLowerCase()) return 1;
+      if (a.faculty.toLowerCase() == b.faculty.toLowerCase()) return 0;
     });
 
     addStudentsToTable();
@@ -319,6 +319,14 @@
 
   function sortByDob() {
     console.log('dob')
+
+    getLatestData();
+
+    students.sort((a, b) => {
+      return new Date(a.dob) - new Date(b.dob);
+    });
+
+    addStudentsToTable();
   }
 
   function sortByDoa() {
