@@ -284,6 +284,7 @@
     })
   }
 
+
   function getLatestData() {
     students = JSON.parse(localStorage.getItem(STORAGE_KEY));
   }
@@ -303,6 +304,7 @@
     addStudentsToTable();
   }
 
+
   function sortByFaculty() {
     console.log('faculty')
 
@@ -317,6 +319,7 @@
     addStudentsToTable();
   }
 
+
   function sortByDob() {
     console.log('dob')
 
@@ -329,9 +332,19 @@
     addStudentsToTable();
   }
 
+
   function sortByDoa() {
     console.log('doa')
+
+    getLatestData();
+
+    students.sort((a, b) => {
+      return new Date(a.doa) - new Date(b.doa);
+    })
+
+    addStudentsToTable();
   }
+
 
   window.createApp = createApp;
 })();
