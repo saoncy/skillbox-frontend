@@ -1,8 +1,97 @@
 (() => {
-  const students = [];
+  const STORAGE_KEY = 'STUDENTS';
+  const sortFunctions = [sortByFullname, sortByFaculty, sortByDob, sortByDoa];
+  let students = [];
+
+
+  function createApp() {
+    const app = document.getElementById('app');
+
+    const inputForm = createStudentForm();
+    const studentsTable = createStudentTable();
+
+    app.append(studentsTable.table);
+    app.append(inputForm.form);
+
+    inputForm.form.addEventListener('submit', event => {
+      event.preventDefault();
+      event.stopPropagation();
+
+      clearFormMessages();
+
+      let isInvalid = false;
+
+      if (inputForm.nameInput.input.value.trim() === '') {
+        inputForm.nameInput.input.classList.add('is-invalid');
+        inputForm.nameInput.inputWrapper.append(createFeedback('Please enter your name', nameInput.input.id, false));
+        isInvalid = true;
+      }
+      if (inputForm.middleNameInput.input.value.trim() === '') {
+        inputForm.middleNameInput.input.classList.add('is-invalid');
+        inputForm.middleNameInput.inputWrapper.append(createFeedback('Please enter your middle name', middleNameInput.input.id, false));
+        isInvalid = true;
+      }
+      if (inputForm.surnameInput.input.value.trim() === '') {
+        inputForm.surnameInput.input.classList.add('is-invalid');
+        inputForm.surnameInput.inputWrapper.append(createFeedback('Please enter your surname', surnameInput.input.id, false));
+        isInvalid = true;
+      }
+      if (inputForm.dateOfBirth.input.value.trim() === '' || inputForm.dateOfBirth.input.valueAsDate.getFullYear() < 1900) {
+        inputForm.dateOfBirth.input.classList.add('is-invalid');
+        inputForm.dateOfBirth.inputWrapper.append(createFeedback('Please enter correct date', dateOfBirth.input.id, false));
+        isInvalid = true;
+      }
+      if (inputForm.dateOfAdmission.input.value.trim() === ''
+      || inputForm.dateOfAdmission.input.valueAsDate.getFullYear() < 2000
+      || inputForm.dateOfBirth.input.valueAsDate.getFullYear() >= 2023) {
+        inputForm.dateOfAdmission.input.classList.add('is-invalid');
+        inputForm.dateOfAdmission.inputWrapper.append(createFeedback('Please enter correct date', dateOfAdmission.input.id, false));
+        isInvalid = true;
+      }
+      if (inputForm.faculty.input.value.trim() === '') {
+        inputForm.faculty.input.classList.add('is-invalid');
+        inputForm.faculty.inputWrapper.append(createFeedback('Please enter your faculty', faculty.input.id, false));
+        isInvalid = true;
+      }
+      if (isInvalid) {
+        Array.from(document.querySelectorAll('.form-control')).forEach(el => {
+          if (!el.classList.contains('is-invalid') && !el.classList.contains('is-valid')) {
+            el.classList.add('is-valid');
+            el.parentNode.append(createFeedback('Looks good!', el.id));
+          }
+        });
+        isInvalid = false;
+      } else {
+        const studentObj = {
+          name: inputForm.nameInput.input.value.trim(),
+          middleName: inputForm.middleNameInput.input.value.trim(),
+          surname: inputForm.surnameInput.input.value.trim(),
+          dob: inputForm.dateOfBirth.input.valueAsDate,
+          doa: inputForm.dateOfAdmission.input.valueAsDate,
+          faculty: inputForm.faculty.input.value.trim()
+        };
+        const studentRecord = createStudentRecord(studentObj);
+				addStudentToTable(studentRecord);
+        saveStudent(studentObj);
+        console.log(students);
+        clearFormMessages();
+        clearForms();
+      }
+    })
+
+    let localStorageStudents = localStorage.getItem(STORAGE_KEY);
+    if (localStorageStudents) {
+      localStorageStudents = JSON.parse(localStorageStudents);
+      localStorageStudents.forEach(student => {
+        console.log(student)
+        const studentRecord = createStudentRecord(student);
+				addStudentToTable(studentRecord);
+      })
+    }
+  }
+
 
   function createStudentForm() {
-    createStudentTable();
     const form = document.createElement('form');
     const nameInput = createInput('First name', 'Иван');
     const middleNameInput = createInput('Middle name', 'Иванович');
@@ -31,65 +120,17 @@
     form.append(faculty.inputWrapper);
     form.append(buttonWrapper);
 
-    form.addEventListener('submit', event => {
-      event.preventDefault();
-      event.stopPropagation();
-
-      clearFormMessages();
-
-      let isInvalid = false;
-
-      if (nameInput.input.value.trim() === '') {
-        nameInput.input.classList.add('is-invalid');
-        nameInput.inputWrapper.append(createFeedback('Please enter your name', nameInput.input.id, false));
-        isInvalid = true;
-      }
-      if (middleNameInput.input.value.trim() === '') {
-        middleNameInput.input.classList.add('is-invalid');
-        middleNameInput.inputWrapper.append(createFeedback('Please enter your middle name', middleNameInput.input.id, false));
-        isInvalid = true;
-      }
-      if (surnameInput.input.value.trim() === '') {
-        surnameInput.input.classList.add('is-invalid');
-        surnameInput.inputWrapper.append(createFeedback('Please enter your surname', surnameInput.input.id, false));
-        isInvalid = true;
-      }
-      if (dateOfBirth.input.value.trim() === '' || dateOfBirth.input.valueAsDate.getFullYear() < 1900) {
-        dateOfBirth.input.classList.add('is-invalid');
-        dateOfBirth.inputWrapper.append(createFeedback('Please enter correct date', dateOfBirth.input.id, false));
-        isInvalid = true;
-      }
-      if (dateOfAdmission.input.value.trim() === ''
-      || dateOfAdmission.input.valueAsDate.getFullYear() < 2000
-      || dateOfBirth.input.valueAsDate.getFullYear() >= 2023) {
-        dateOfAdmission.input.classList.add('is-invalid');
-        dateOfAdmission.inputWrapper.append(createFeedback('Please enter correct date', dateOfAdmission.input.id, false));
-        isInvalid = true;
-      }
-      if (faculty.input.value.trim() === '') {
-        faculty.input.classList.add('is-invalid');
-        faculty.inputWrapper.append(createFeedback('Please enter your faculty', faculty.input.id, false));
-        isInvalid = true;
-      }
-      if (isInvalid) {
-        Array.from(document.querySelectorAll('.form-control')).forEach(el => {
-          if (!el.classList.contains('is-invalid') && !el.classList.contains('is-valid')) {
-            el.classList.add('is-valid');
-            el.parentNode.append(createFeedback('Looks good!', el.id));
-          }
-        });
-        isInvalid = false;
-      } else {
-        addStudent(nameInput.input.value.trim(), middleNameInput.input.value.trim(), surnameInput.input.value.trim(),
-        dateOfBirth.input.valueAsDate, dateOfAdmission.input.valueAsDate, faculty.input.value.trim());
-        console.log(students);
-        clearFormMessages();
-        clearForms();
-      }
-    })
-
-    document.getElementById('app').append(form);
+    return {
+      form,
+      nameInput,
+      middleNameInput,
+      surnameInput,
+      dateOfBirth,
+      dateOfAdmission,
+      faculty
+    }
   }
+
 
   function createInput(label, placeholder, date = false) {
     const inputWrapper = document.createElement('div');
@@ -116,9 +157,12 @@
     };
   }
 
+
   function createFeedback(text, id, valid = true) {
     document.getElementById(id).removeAttribute('aria-describedby');
+
     const feedbackWrapper = document.createElement('div');
+
     valid ? feedbackWrapper.classList.add('valid-feedback') : feedbackWrapper.classList.add('invalid-feedback');
     feedbackWrapper.textContent = text;
     feedbackWrapper.setAttribute('id', `${id}Feedback`.toLowerCase());
@@ -126,6 +170,7 @@
 
     return feedbackWrapper;
   }
+
 
   function createStudentTable() {
     const table = document.createElement('table');
@@ -137,60 +182,82 @@
 
     table.append(tableHeader);
     table.append(tableBody);
-    document.getElementById('app').append(table);
+
+    return {
+      table,
+      tableHeader,
+      tableBody
+    };
   }
+
 
   function createTableHeader(array) {
     const header = document.createElement('thead');
     const row = document.createElement('tr');
 
-    array.forEach(element => {
+    for (let i = 0; i < array.length; i++) {
       const column = document.createElement('th');
       column.scope = 'col';
-      column.setAttribute('id', element.split(' ').join('').toLowerCase());
+      column.setAttribute('id', array[i].split(' ').join('').toLowerCase());
       column.style.cursor = 'pointer';
-      column.textContent = element;
+      column.textContent = array[i];
+      column.addEventListener('click', sortFunctions[i]);
       row.append(column);
-    });
+    }
 
     header.append(row);
 
     return header;
   }
 
-  function addStudent(name, middleName, surname, dob, doa, faculty) {
-    const student = {
-      name: name,
-      surname, surname,
-      middleName: middleName,
-      dob: dob,
-      doa: doa,
-      faculty: faculty
-    };
 
-    students.push(student);
+  function createStudentRecord(student) {
+    const record = document.createElement('tr');
 
-    const row = document.createElement('tr');
-    for (let prop in info = createStudentRow(student)) {
+    for (let prop in info = createStudentRowObject(student)) {
       const column = document.createElement('td');
       column.textContent = info[prop];
-      row.append(column);
+      record.append(column);
     }
 
-    document.querySelector('tbody').append(row);
+    return record;
   }
 
-  function createStudentRow(student) {
+
+  function createStudentRowObject(student) {
+    const today = new Date();
+    if (typeof(student.dob) === 'string' || typeof(student.doa) === 'string') {
+      student.dob = new Date(student.dob);
+      student.doa = new Date(student.doa);
+    }
     return {
       fullname: student.surname + ' ' + student.name + ' ' + student.middleName,
       faculty: student.faculty,
-      dob: `${student.dob.getDate()}.${student.dob.getMonth() + 1}.${student.dob.getFullYear()}`,
-      doa: `${student.doa.getFullYear()}-${student.doa.getFullYear() + 4} (${new Date().getFullYear() - student.doa.getFullYear() > 4
-        || (new Date.getFullYear() == student.doa.getFullYear() + 4 && new Date.getMonth() + 1 > 9)
-        ? 'закончил'
-        : new Date().getFullYear() - student.doa.getFullYear() + ' курс'})`,
-    };
+      dob: `${student.dob.getDate()}.${student.dob.getMonth() + 1}.${student.dob.getFullYear()} (${today.getFullYear() - student.dob.getFullYear()} years)`,
+      doa: `${student.doa.getFullYear()}-${student.doa.getFullYear() + 4} (${today.getFullYear() - student.doa.getFullYear() > 4
+        || (today.getFullYear() == student.doa.getFullYear() + 4 && today.getMonth() + 1 > 9)
+        ? 'finished'
+        : new Date().getFullYear() - student.doa.getFullYear() + ' year'})`,
+    }
   }
+
+
+  function addStudentToTable(record) {
+    document.querySelector('tbody').append(record);
+  }
+
+
+  function saveStudent(obj) {
+    if (!localStorage.getItem(STORAGE_KEY)) {
+      console.log('creating new storage');
+      localStorage.setItem(STORAGE_KEY, JSON.stringify([obj]));
+    } else {
+      const studentsArray = JSON.parse(localStorage.getItem(STORAGE_KEY));
+      studentsArray.push(obj);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(studentsArray));
+    }
+  }
+
 
   function clearFormMessages() {
     Array.from(document.querySelectorAll('.form-control')).forEach(el => {
@@ -206,11 +273,28 @@
     });
   }
 
+
   function clearForms() {
     Array.from(document.querySelectorAll('.form-control')).forEach(el => {
       el.value = '';
     })
   }
 
-  window.createStudentForm = createStudentForm;
+  function sortByFullname() {
+    console.log('fullname')
+  }
+
+  function sortByFaculty() {
+    console.log('faculty')
+  }
+
+  function sortByDob() {
+    console.log('dob')
+  }
+
+  function sortByDoa() {
+    console.log('doa')
+  }
+
+  window.createApp = createApp;
 })();
