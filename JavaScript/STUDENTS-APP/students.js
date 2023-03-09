@@ -7,11 +7,15 @@
   function createApp() {
     const app = document.getElementById('app');
 
+    const inputWrapper = createInputWrapper();
+    const filterBlock = createFilterBlock();
     const inputForm = createStudentForm();
     const studentsTable = createStudentTable();
 
+    inputWrapper.append(filterBlock.filterWrapper);
+    inputWrapper.append(inputForm.form);
+    app.append(inputWrapper);
     app.append(studentsTable.table);
-    app.append(inputForm.form);
 
     inputForm.form.addEventListener('submit', event => {
       event.preventDefault();
@@ -89,12 +93,12 @@
 
   function createStudentForm() {
     const form = document.createElement('form');
-    const nameInput = createInput('First name', 'Иван');
-    const middleNameInput = createInput('Middle name', 'Иванович');
-    const surnameInput = createInput('Last name', 'Иванов');
-    const dateOfBirth = createInput('Date of Birth', '01.01.2000', true);
-    const dateOfAdmission = createInput('Date of admission', '01.01.2018', true)
-    const faculty = createInput('Faculty', 'ИУ');
+    const nameInput = createStudentInput('First name', 'Иван');
+    const middleNameInput = createStudentInput('Middle name', 'Иванович');
+    const surnameInput = createStudentInput('Last name', 'Иванов');
+    const dateOfBirth = createStudentInput('Date of Birth', '01.01.2000', true);
+    const dateOfAdmission = createStudentInput('Date of admission', '01.01.2018', true)
+    const faculty = createStudentInput('Faculty', 'ИУ');
     const buttonWrapper = document.createElement('div')
     const button = document.createElement('button');
 
@@ -128,7 +132,7 @@
   }
 
 
-  function createInput(label, placeholder, date = false) {
+  function createStudentInput(label, placeholder, date = false) {
     const inputWrapper = document.createElement('div');
     const inputLabel = document.createElement('label');
     const input = document.createElement('input');
@@ -174,7 +178,7 @@
     const tableHeader = createTableHeader(['Fullname', 'Faculty', 'DOB', 'College']);
 
     table.classList.add('table', 'table-dark', 'table-hover')
-    table.style.width = '70%';
+    // table.style.width = '70%';
 
     table.append(tableHeader);
     table.append(tableBody);
@@ -237,6 +241,63 @@
     }
   }
 
+
+  function createFilterBlock() {
+    const filterWrapper = document.createElement('div');
+    const fullnameInput = createFilterInput('Search by full name', 'Surname Name Middle name');
+    const facultyInput = createFilterInput('Search by faculty', 'Faculty');
+    const DOBInput = createFilterInput('Search by DoB (exact match)', 'xx.xx.xxxx');
+    const DOAInput = createFilterInput('Search by DoA (exact match)', 'xx.xx.xxxx');
+
+    filterWrapper.classList.add('row', 'gy-4');
+    filterWrapper.style.width = '30%';
+
+    filterWrapper.append(fullnameInput.inputWrapper);
+    filterWrapper.append(facultyInput.inputWrapper);
+    filterWrapper.append(DOBInput.inputWrapper);
+    filterWrapper.append(DOAInput.inputWrapper);
+
+    return {
+      filterWrapper,
+      fullnameInput,
+      facultyInput,
+      DOBInput,
+      DOAInput
+    }
+  }
+
+
+  function createFilterInput(label, placeholder) {
+    const inputWrapper = document.createElement('div');
+    const inputLabel = document.createElement('label');
+    const input = document.createElement('input');
+
+    inputWrapper.classList.add('col-md-12', 'gy-4');
+    inputLabel.classList.add('form-label');
+    inputLabel.setAttribute('for', `filter-${label.split(' ').join('')}`.toLowerCase());
+    inputLabel.textContent = label;
+    input.classList.add('form-control');
+    input.setAttribute('id', `filter-${label.split(' ').join('')}`.toLowerCase());
+    input.placeholder = placeholder;
+
+    inputWrapper.append(inputLabel);
+    inputWrapper.append(input);
+
+    return {
+      inputWrapper,
+      inputLabel,
+      input
+    };
+  }
+
+
+  function createInputWrapper() {
+    const wrapper = document.createElement('div');
+
+    wrapper.classList.add('col-12', 'row', 'justify-content-around');
+
+    return wrapper;
+  }
 
   function addStudentsToTable() {
     const tableBody = document.querySelector('tbody');
