@@ -256,7 +256,7 @@
       students = [obj];
       localStorage.setItem(STORAGE_KEY, JSON.stringify([obj]));
     } else {
-      students = JSON.parse(localStorage.getItem(STORAGE_KEY));
+      getLatestData()
       students.push(obj);
       localStorage.setItem(STORAGE_KEY, JSON.stringify(students));
     }
@@ -284,29 +284,28 @@
     })
   }
 
+  function getLatestData() {
+    students = JSON.parse(localStorage.getItem(STORAGE_KEY));
+  }
+
+
   function sortByFullname() {
     console.log('fullname')
-    const tableBody = document.querySelector('tbody');
-    const records = Array.from(tableBody.childNodes);
 
-    records.sort((a, b) => {
-      const nameA = Array.from(a.childNodes)[0].textContent;
-      const nameB = Array.from(b.childNodes)[0].textContent;
+    getLatestData();
 
-      if (nameA < nameB) return -1;
-      if (nameA > nameB) return 1;
-      if (nameA == nameB) return 0;
+    students.sort((a, b) => {
+      if ([a.surname, a.name, a.middleName].join(' ') < [b.surname, b.name, b.middleName].join(' ')) return -1;
+      if ([a.surname, a.name, a.middleName].join(' ') > [b.surname, b.name, b.middleName].join(' ')) return 1;
+      if ([a.surname, a.name, a.middleName].join(' ') = [b.surname, b.name, b.middleName].join(' ')) return 0;
     });
 
-    tableBody.innerHTML = '';
-
-    records.forEach(el => {
-      tableBody.append(el);
-    })
+    addStudentsToTable();
   }
 
   function sortByFaculty() {
     console.log('faculty')
+
   }
 
   function sortByDob() {
