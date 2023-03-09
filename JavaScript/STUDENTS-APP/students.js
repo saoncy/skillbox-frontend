@@ -23,34 +23,34 @@
 
       if (inputForm.nameInput.input.value.trim() === '') {
         inputForm.nameInput.input.classList.add('is-invalid');
-        inputForm.nameInput.inputWrapper.append(createFeedback('Please enter your name', nameInput.input.id, false));
+        inputForm.nameInput.inputWrapper.append(createFeedback('Please enter your name', inputForm.nameInput.input.id, false));
         isInvalid = true;
       }
       if (inputForm.middleNameInput.input.value.trim() === '') {
         inputForm.middleNameInput.input.classList.add('is-invalid');
-        inputForm.middleNameInput.inputWrapper.append(createFeedback('Please enter your middle name', middleNameInput.input.id, false));
+        inputForm.middleNameInput.inputWrapper.append(createFeedback('Please enter your middle name', inputForm.middleNameInput.input.id, false));
         isInvalid = true;
       }
       if (inputForm.surnameInput.input.value.trim() === '') {
         inputForm.surnameInput.input.classList.add('is-invalid');
-        inputForm.surnameInput.inputWrapper.append(createFeedback('Please enter your surname', surnameInput.input.id, false));
+        inputForm.surnameInput.inputWrapper.append(createFeedback('Please enter your surname', inputForm.surnameInput.input.id, false));
         isInvalid = true;
       }
       if (inputForm.dateOfBirth.input.value.trim() === '' || inputForm.dateOfBirth.input.valueAsDate.getFullYear() < 1900) {
         inputForm.dateOfBirth.input.classList.add('is-invalid');
-        inputForm.dateOfBirth.inputWrapper.append(createFeedback('Please enter correct date', dateOfBirth.input.id, false));
+        inputForm.dateOfBirth.inputWrapper.append(createFeedback('Please enter correct date', inputForm.dateOfBirth.input.id, false));
         isInvalid = true;
       }
       if (inputForm.dateOfAdmission.input.value.trim() === ''
       || inputForm.dateOfAdmission.input.valueAsDate.getFullYear() < 2000
       || inputForm.dateOfBirth.input.valueAsDate.getFullYear() >= 2023) {
         inputForm.dateOfAdmission.input.classList.add('is-invalid');
-        inputForm.dateOfAdmission.inputWrapper.append(createFeedback('Please enter correct date', dateOfAdmission.input.id, false));
+        inputForm.dateOfAdmission.inputWrapper.append(createFeedback('Please enter correct date', inputForm.dateOfAdmission.input.id, false));
         isInvalid = true;
       }
       if (inputForm.faculty.input.value.trim() === '') {
         inputForm.faculty.input.classList.add('is-invalid');
-        inputForm.faculty.inputWrapper.append(createFeedback('Please enter your faculty', faculty.input.id, false));
+        inputForm.faculty.inputWrapper.append(createFeedback('Please enter your faculty', inputForm.faculty.input.id, false));
         isInvalid = true;
       }
       if (isInvalid) {
