@@ -70,10 +70,10 @@
           doa: inputForm.dateOfAdmission.input.valueAsDate,
           faculty: inputForm.faculty.input.value.trim()
         };
+
         const studentRecord = createStudentRecord(studentObj);
 				addStudentToTable(studentRecord);
         saveStudent(studentObj);
-        console.log(students);
         clearFormMessages();
         clearForms();
       }
@@ -83,7 +83,6 @@
     if (localStorageStudents) {
       localStorageStudents = JSON.parse(localStorageStudents);
       localStorageStudents.forEach(student => {
-        console.log(student)
         const studentRecord = createStudentRecord(student);
 				addStudentToTable(studentRecord);
       })
@@ -237,7 +236,7 @@
       doa: `${student.doa.getFullYear()}-${student.doa.getFullYear() + 4} (${today.getFullYear() - student.doa.getFullYear() > 4
         || (today.getFullYear() == student.doa.getFullYear() + 4 && today.getMonth() + 1 > 9)
         ? 'finished'
-        : new Date().getFullYear() - student.doa.getFullYear() + ' year'})`,
+        : today.getFullYear() - student.doa.getFullYear() + ' year'})`,
     }
   }
 
