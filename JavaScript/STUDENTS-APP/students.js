@@ -79,13 +79,14 @@
       }
     })
 
-    let localStorageStudents = localStorage.getItem(STORAGE_KEY);
-    if (localStorageStudents) {
-      localStorageStudents = JSON.parse(localStorageStudents);
-      localStorageStudents.forEach(student => {
+
+    students = localStorage.getItem(STORAGE_KEY);
+    if (students) {
+      students = JSON.parse(students);
+      students.forEach(student => {
         const studentRecord = createStudentRecord(student);
 				addStudentToTable(studentRecord);
-      })
+      });
     }
   }
 
@@ -249,11 +250,12 @@
   function saveStudent(obj) {
     if (!localStorage.getItem(STORAGE_KEY)) {
       console.log('creating new storage');
+      students = [obj];
       localStorage.setItem(STORAGE_KEY, JSON.stringify([obj]));
     } else {
-      const studentsArray = JSON.parse(localStorage.getItem(STORAGE_KEY));
-      studentsArray.push(obj);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(studentsArray));
+      students = JSON.parse(localStorage.getItem(STORAGE_KEY));
+      students.push(obj);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(students));
     }
   }
 
@@ -281,6 +283,23 @@
 
   function sortByFullname() {
     console.log('fullname')
+    const tableBody = document.querySelector('tbody');
+    const records = Array.from(tableBody.childNodes);
+
+    records.sort((a, b) => {
+      const nameA = Array.from(a.childNodes)[0].textContent;
+      const nameB = Array.from(b.childNodes)[0].textContent;
+
+      if (nameA < nameB) return -1;
+      if (nameA > nameB) return 1;
+      if (nameA == nameB) return 0;
+    });
+
+    tableBody.innerHTML = '';
+
+    records.forEach(el => {
+      tableBody.append(el);
+    })
   }
 
   function sortByFaculty() {
