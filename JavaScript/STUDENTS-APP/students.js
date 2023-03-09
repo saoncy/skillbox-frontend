@@ -306,6 +306,15 @@
   function sortByFaculty() {
     console.log('faculty')
 
+    getLatestData();
+
+    students.sort((a, b) => {
+      if (a.faculty < b.faculty) return -1;
+      if (a.faculty > b.faculty) return 1;
+      if (a.faculty = b.faculty) return 0;
+    });
+
+    addStudentsToTable();
   }
 
   function sortByDob() {
