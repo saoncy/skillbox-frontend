@@ -440,10 +440,10 @@
 
   function handleFilterByFullname(input) {
     students = students.filter(el => {
-      const fullname = input.value.split(' ')
-      if (fullname.includes(el.name)
-      || fullname.includes(el.surname)
-      || fullname.includes(el.middleName)) return true;
+      const fullname = input.value;
+      if (el.name.includes(fullname)
+      || el.surname.includes(fullname)
+      || el.middleName.includes(fullname)) return true;
 
       return false
     });
