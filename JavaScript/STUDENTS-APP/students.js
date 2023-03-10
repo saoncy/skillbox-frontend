@@ -81,7 +81,7 @@
         clearFormMessages();
         clearForms();
       }
-    })
+    });
 
 
     students = localStorage.getItem(STORAGE_KEY);
@@ -245,10 +245,10 @@
 
   function createFilterBlock() {
     const filterWrapper = document.createElement('div');
-    const fullnameInput = createFilterInput('Search by full name', 'Surname Name Middle name');
+    const fullnameInput = createFilterInput('Search by full name', 'Fullname');
     const facultyInput = createFilterInput('Search by faculty', 'Faculty');
-    const DOBInput = createFilterInput('Search by DoB (exact match)', 'xx.xx.xxxx');
-    const DOAInput = createFilterInput('Search by DoA (exact match)', 'xx.xx.xxxx');
+    const DOBInput = createFilterInput('Search by DoB (exact match)', 'DoB');
+    const DOAInput = createFilterInput('Search by DoA (exact match)', 'DoA');
 
     filterWrapper.classList.add('row', 'gy-4');
     filterWrapper.style.width = '30%';
@@ -275,10 +275,10 @@
 
     inputWrapper.classList.add('col-12');
     inputLabel.classList.add('form-label');
-    inputLabel.setAttribute('for', `filter-${label.split(' ').join('')}`.toLowerCase());
+    inputLabel.setAttribute('for', `filter-${placeholder.split(' ').join('')}`.toLowerCase());
     inputLabel.textContent = label;
     input.classList.add('form-control');
-    input.setAttribute('id', `filter-${label.split(' ').join('')}`.toLowerCase());
+    input.setAttribute('id', `filter-${placeholder.split(' ').join('')}`.toLowerCase());
     input.placeholder = placeholder;
 
     inputWrapper.append(inputLabel);
