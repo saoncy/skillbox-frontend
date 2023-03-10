@@ -326,7 +326,7 @@
 
 
   function clearFormMessages() {
-    Array.from(document.querySelectorAll('.form-control')).forEach(el => {
+    Array.from(document.querySelectorAll('.student__form-control')).forEach(el => {
       if (el.classList.contains('is-invalid') || el.classList.contains('is-valid')){
         el.classList.remove('is-invalid');
         el.classList.remove('is-valid');
