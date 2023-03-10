@@ -425,10 +425,9 @@
   function handleFiltration(input) {
     if (input.id === 'filter-fullname') {
       handleFilterByFullname(input);
-      addStudentsToTable();
     }
     if (input.id === 'filter-faculty') {
-      console.log('2')
+      handleFilterByFaculty(input);
     }
     if (input.id === 'filter-dob') {
       console.log('3')
@@ -436,6 +435,7 @@
     if (input.id === 'filter-doa') {
       console.log('4')
     }
+    addStudentsToTable();
   }
 
   function handleFilterByFullname(input) {
@@ -447,6 +447,11 @@
 
       return false
     });
+  }
+
+
+  function handleFilterByFaculty(input) {
+    students = students.filter(el => el.faculty.includes(input.value));
   }
 
 
