@@ -15,6 +15,7 @@
     inputWrapper.append(filterBlock.filterWrapper);
     inputWrapper.append(inputForm.form);
     app.append(inputWrapper);
+    app.append(document.createElement('hr'));
     app.append(studentsTable.table);
 
     inputForm.form.addEventListener('submit', event => {
@@ -58,7 +59,7 @@
         isInvalid = true;
       }
       if (isInvalid) {
-        Array.from(document.querySelectorAll('.form-control')).forEach(el => {
+        Array.from(document.querySelectorAll('.student__form-control')).forEach(el => {
           if (!el.classList.contains('is-invalid') && !el.classList.contains('is-valid')) {
             el.classList.add('is-valid');
             el.parentNode.append(createFeedback('Looks good!', el.id));
@@ -137,11 +138,11 @@
     const inputLabel = document.createElement('label');
     const input = document.createElement('input');
 
-    inputWrapper.classList.add('col-md-6');
+    inputWrapper.classList.add('col-6');
     inputLabel.classList.add('form-label');
     inputLabel.setAttribute('for', `${label.split(' ').join('')}`.toLowerCase());
     inputLabel.textContent = label;
-    input.classList.add('form-control');
+    input.classList.add('form-control', 'student__form-control');
     input.setAttribute('id', `${label.split(' ').join('')}`.toLowerCase());
     input.type = !date ? 'text' : 'date';
     input.placeholder = placeholder;
@@ -177,7 +178,7 @@
     const tableBody = document.createElement('tbody');
     const tableHeader = createTableHeader(['Fullname', 'Faculty', 'DOB', 'College']);
 
-    table.classList.add('table', 'table-dark', 'table-hover')
+    table.classList.add('table', 'table-dark', 'table-hover', 'my-4')
     // table.style.width = '70%';
 
     table.append(tableHeader);
@@ -272,7 +273,7 @@
     const inputLabel = document.createElement('label');
     const input = document.createElement('input');
 
-    inputWrapper.classList.add('col-md-12', 'gy-4');
+    inputWrapper.classList.add('col-12');
     inputLabel.classList.add('form-label');
     inputLabel.setAttribute('for', `filter-${label.split(' ').join('')}`.toLowerCase());
     inputLabel.textContent = label;
@@ -294,7 +295,7 @@
   function createInputWrapper() {
     const wrapper = document.createElement('div');
 
-    wrapper.classList.add('col-12', 'row', 'justify-content-around');
+    wrapper.classList.add('d-flex', 'justify-content-around', 'align-items-start');
 
     return wrapper;
   }
