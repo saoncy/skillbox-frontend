@@ -1,7 +1,9 @@
 (() => {
+  const WAIT_TIME_MS = 500;
   const STORAGE_KEY = 'STUDENTS';
   const sortFunctions = [sortByFullname, sortByFaculty, sortByDob, sortByDoa];
   let students = [];
+  let timeoutID;
 
 
   function createApp() {
@@ -83,6 +85,18 @@
       }
     });
 
+    filterBlock.filterWrapper.addEventListener('input', event => {
+      clearTimeout(timeoutID);
+      setTimeout(() => {
+        getLatestData();
+        const filterInputs = Array.from(document.querySelectorAll('.filter__form-control')).filter(filter => filter.id !== event.target.id);
+        filterInputs.forEach(el => {
+          if (el.value) handleFiltration(el);
+        })
+        handleFiltration(event.target);
+      }, WAIT_TIME_MS);
+    });
+
 
     students = localStorage.getItem(STORAGE_KEY);
     if (students) {
@@ -91,6 +105,21 @@
     }
   }
 
+
+  function handleFiltration(input) {
+    if (input.id === 'filter-fullname') {
+      console.log('1')
+    }
+    if (input.id === 'filter-faculty') {
+      console.log('2')
+    }
+    if (input.id === 'filter-dob') {
+      console.log('3')
+    }
+    if (input.id === 'filter-doa') {
+      console.log('4')
+    }
+  }
 
   function createStudentForm() {
     const form = document.createElement('form');
@@ -277,7 +306,7 @@
     inputLabel.classList.add('form-label');
     inputLabel.setAttribute('for', `filter-${placeholder.split(' ').join('')}`.toLowerCase());
     inputLabel.textContent = label;
-    input.classList.add('form-control');
+    input.classList.add('form-control', 'filter__form-control');
     input.setAttribute('id', `filter-${placeholder.split(' ').join('')}`.toLowerCase());
     input.placeholder = placeholder;
 
@@ -299,6 +328,7 @@
 
     return wrapper;
   }
+
 
   function addStudentsToTable() {
     const tableBody = document.querySelector('tbody');
