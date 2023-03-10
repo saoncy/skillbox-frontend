@@ -262,7 +262,7 @@
     const fullnameInput = createFilterInput('Search by full name', 'Fullname');
     const facultyInput = createFilterInput('Search by faculty', 'Faculty');
     const DOBInput = createFilterInput('Search by DoB (exact match)', 'DoB');
-    const DOAInput = createFilterInput('Search by DoA (exact match)', 'DoA');
+    const DOAInput = createFilterInput('Search by year of graduation (exact match)', 'Year Of Graduation');
 
     filterWrapper.classList.add('row', 'gy-4');
     filterWrapper.style.width = '30%';
@@ -423,17 +423,19 @@
   }
 
   function handleFiltration(input) {
-    if (input.id === 'filter-fullname') {
-      handleFilterByFullname(input);
-    }
-    if (input.id === 'filter-faculty') {
-      handleFilterByFaculty(input);
-    }
-    if (input.id === 'filter-dob') {
-      console.log('3')
-    }
-    if (input.id === 'filter-doa') {
-      console.log('4')
+    if (input.value) {
+      if (input.id === 'filter-fullname') {
+        handleFilterByFullname(input);
+      }
+      if (input.id === 'filter-faculty') {
+        handleFilterByFaculty(input);
+      }
+      if (input.id === 'filter-dob') {
+        handleFilterByDob(input);
+      }
+      if (input.id === 'filter-yearofgraduation') {
+        handleFilterByGraduationYear(input);
+      }
     }
     addStudentsToTable();
   }
@@ -452,6 +454,23 @@
 
   function handleFilterByFaculty(input) {
     students = students.filter(el => el.faculty.includes(input.value));
+  }
+
+  function handleFilterByDob(input){
+    const inputDate = new Date(input.value);
+    students = students.filter(el => {
+      const dob = new Date(el.dob);
+      if (dob.getFullYear() === inputDate.getFullYear()
+      && dob.getMonth() === inputDate.getMonth()
+      && dob.getDate() === inputDate.getDate()) return true;
+
+      return false;
+    })
+  }
+
+
+  function handleFilterByGraduationYear(input) {
+    students = students.filter(el => new Date(el.doa).getFullYear() + 4 === parseInt(input.value));
   }
 
 
