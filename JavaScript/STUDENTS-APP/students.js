@@ -106,21 +106,6 @@
   }
 
 
-  function handleFiltration(input) {
-    if (input.id === 'filter-fullname') {
-      console.log('1')
-    }
-    if (input.id === 'filter-faculty') {
-      console.log('2')
-    }
-    if (input.id === 'filter-dob') {
-      console.log('3')
-    }
-    if (input.id === 'filter-doa') {
-      console.log('4')
-    }
-  }
-
   function createStudentForm() {
     const form = document.createElement('form');
     const nameInput = createStudentInput('First name', 'Иван');
@@ -385,7 +370,7 @@
   function sortByFullname() {
     console.log('fullname')
 
-    getLatestData();
+    // getLatestData();
 
     students.sort((a, b) => {
       if ([a.surname, a.name, a.middleName].join(' ').toLowerCase() < [b.surname, b.name, b.middleName].join(' ').toLowerCase()) return -1;
@@ -400,7 +385,7 @@
   function sortByFaculty() {
     console.log('faculty')
 
-    getLatestData();
+    // getLatestData();
 
     students.sort((a, b) => {
       if (a.faculty.toLowerCase() < b.faculty.toLowerCase()) return -1;
@@ -415,7 +400,7 @@
   function sortByDob() {
     console.log('dob')
 
-    getLatestData();
+    // getLatestData();
 
     students.sort((a, b) => {
       return new Date(a.dob) - new Date(b.dob);
@@ -428,13 +413,40 @@
   function sortByDoa() {
     console.log('doa')
 
-    getLatestData();
+    // getLatestData();
 
     students.sort((a, b) => {
       return new Date(a.doa) - new Date(b.doa);
     })
 
     addStudentsToTable();
+  }
+
+  function handleFiltration(input) {
+    if (input.id === 'filter-fullname') {
+      handleFilterByFullname(input);
+      addStudentsToTable();
+    }
+    if (input.id === 'filter-faculty') {
+      console.log('2')
+    }
+    if (input.id === 'filter-dob') {
+      console.log('3')
+    }
+    if (input.id === 'filter-doa') {
+      console.log('4')
+    }
+  }
+
+  function handleFilterByFullname(input) {
+    students = students.filter(el => {
+      const fullname = input.value.split(' ')
+      if (fullname.includes(el.name)
+      || fullname.includes(el.surname)
+      || fullname.includes(el.middleName)) return true;
+
+      return false
+    });
   }
 
 
