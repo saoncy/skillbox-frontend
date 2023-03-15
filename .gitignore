@@ -92,3 +92,5 @@ lerna-debug.log
 Thumbs.db
 
 .editorconfig
+
+JavaScript/TODO-APP-SERVER/db.json

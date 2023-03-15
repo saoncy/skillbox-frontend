@@ -37,16 +37,17 @@
     return list;
   }
 
-  function createTodoItem(item, key) {
-    let todoItem = document.createElement('li');
+  function createTodoItem(item, { onDone, onDelete }) {
+    const DONE_ITEM_CLASS = 'list-group-item-success';
+    const todoItem = document.createElement('li');
 
-    let buttonGroup = document.createElement('div');
-    let doneButton = document.createElement('button');
-    let deleteButton = document.createElement('button');
+    const buttonGroup = document.createElement('div');
+    const doneButton = document.createElement('button');
+    const deleteButton = document.createElement('button');
 
     todoItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
     if (item.done) {
-      todoItem.classList.add('list-group-item-success')
+      todoItem.classList.add(DONE_ITEM_CLASS)
     }
     todoItem.textContent = item.name;
 
@@ -57,7 +58,10 @@
     deleteButton.textContent = 'Удалить';
 
     doneButton.addEventListener('click', () => {
-      todoItem.classList.toggle('list-group-item-success');
+      onDone({ item, element: todoItem });
+      todoItem.classList.toggle(DONE_ITEM_CLASS, todoItem.done);
+
+      // old code below that worked on previous versions
       // let localStorageItems = JSON.parse(localStorage.getItem(key));
       // localStorageItems.forEach(el => {
       //   if (el.name === item.name) {
@@ -68,17 +72,17 @@
     });
 
     deleteButton.addEventListener('click', () => {
-      if (confirm('Вы уверены?')) {
-        todoItem.remove();
-        // let localStorageItems = JSON.parse(localStorage.getItem(key));
-        // localStorageItems.forEach((el, ind, arr) => {
-        //   if (el.name === item.name) {
-        //     if (arr.length === 1) arr = [];
-        //     arr.splice(ind, ind)
-        //     localStorage.setItem(key, JSON.stringify(arr));
-        //   }
-        // })
-      }
+      onDelete({ item, element: todoItem });
+
+      // old code below that worked on previous versions
+      // let localStorageItems = JSON.parse(localStorage.getItem(key));
+      // localStorageItems.forEach((el, ind, arr) => {
+      //   if (el.name === item.name) {
+      //     if (arr.length === 1) arr = [];
+      //     arr.splice(ind, ind)
+      //     localStorage.setItem(key, JSON.stringify(arr));
+      //   }
+      // })
     });
 
     buttonGroup.append(doneButton);
@@ -88,10 +92,31 @@
     return todoItem;
   }
 
-  function createTodoApp(container, key, title = 'Список дел', todoItems = []) {
-    let todoAppTitle = createAppTitle(title);
-    let todoItemForm = createTodoItemForm();
-    let todoList = createTodoList();
+  async function createTodoApp(container, owner, title = 'Список дел') {
+    const todoAppTitle = createAppTitle(title);
+    const todoItemForm = createTodoItemForm();
+    const todoList = createTodoList();
+    const handlers = {
+      onDone({ item }) {
+        item.done = !item.done;
+        fetch(`http://localhost:3000/api/todos/${item.id}`, {
+          method: 'PATCH',
+          body: JSON.stringify({ done: item.done }),
+          headers: {
+            'Content-Type': 'application/json',
+          }
+        });
+      },
+      onDelete({ item, element }) {
+        if (!confirm('Вы уверены?')) {
+          return;
+        }
+        element.remove();
+        fetch(`http://localhost:3000/api/todos/${item.id}`, {
+          method: 'DELETE',
+        });
+      }
+    }
 
     todoItemForm.input.addEventListener('keyup', () => {
       if (todoItemForm.input.value) {
@@ -105,12 +130,17 @@
     container.append(todoItemForm.form);
     container.append(todoList);
 
+    const response = await fetch(`http:/localhost:3000/api/todos?owner=${owner}`);
+    const todoItems = await response.json();
+
+
     if (todoItems.length > 0) {
       todoItems.forEach(item => {
-        todoList.append(createTodoItem(item, key).todoItem);
+        todoList.append(createTodoItem(item, handlers));
       });
     }
 
+    // old code below that worked on previous versions
     // let localStorageItems = localStorage.getItem(key);
     // if (localStorageItems) {
     //   localStorageItems = JSON.parse(localStorageItems);
@@ -130,7 +160,7 @@
         method: 'POST',
         body: JSON.stringify({
           name: todoItemForm.input.value.trim(),
-          owner: 'Saoncy',
+          owner: owner,
         }),
         headers: {
           'Content-Type': 'application/json',
@@ -148,7 +178,7 @@
       //   localStorage.setItem(key, JSON.stringify(todoListArray));
       // }
 
-      todoList.append(createTodoItem(todoListItem, key));
+      todoList.append(createTodoItem(todoListItem, handlers));
 
       todoItemForm.input.value = '';
       todoItemForm.button.disabled = true;
