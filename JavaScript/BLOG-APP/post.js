@@ -4,23 +4,20 @@
     const postBody = document.createElement("div");
     const postTitle = document.createElement("h1");
     const postText = document.createElement("p");
-    const postLinkBack = document.createElement("a");
+    const goBackButton = createGoBackButton();
     const postObject = await getBlogPostById(id);
 
     post.classList.add("card", "mx-auto", "col-6");
     postBody.classList.add("card-body");
     postTitle.classList.add("card-title");
     postText.classList.add("card-text");
-    postLinkBack.classList.add("card-link");
 
     postTitle.textContent = postObject.title;
     postText.textContent = postObject.body;
-    postLinkBack.textContent = "Return to the beginning";
-    postLinkBack.href = "index.html";
 
     postBody.append(postTitle);
     postBody.append(postText);
-    postBody.append(postLinkBack);
+    postBody.append(goBackButton);
     post.append(postBody);
 
     return post;
@@ -60,10 +57,22 @@
     return commentSection;
   }
 
+  function createGoBackButton() {
+    const goBackButton = document.createElement("button");
+
+    goBackButton.classList.add("btn", "btn-outline-secondary");
+    goBackButton.textContent = "Go back";
+
+    goBackButton.addEventListener("click", () => {
+      window.history.back();
+    });
+
+    return goBackButton;
+  }
+
   async function addCommentsToPage(postID) {
     const container = document.getElementById("comments-section");
     const comments = await getBlogPostCommentsById(postID);
-    console.log(comments);
 
     if (comments.length) {
       comments.forEach((el) => {
@@ -72,7 +81,7 @@
     } else {
       const msg = document.createElement("p");
 
-      msg.classList.add("text-info", "fs-5");
+      msg.classList.add("text-danger", "fs-5");
       msg.textContent = "No comments";
 
       container.append(msg);
@@ -82,10 +91,11 @@
   async function createPostPage() {
     const container = document.getElementById("blog-post");
     const pageParams = new URLSearchParams(window.location.search);
+    const post = await createBlogPostPage(pageParams.get("id"));
     const commentSection = createCommentsList();
 
     document.title += pageParams.get("id");
-    container.append(await createBlogPostPage(pageParams.get("id")));
+    container.append(post);
     container.append(commentSection);
 
     addCommentsToPage(pageParams.get("id"));
