@@ -2,7 +2,7 @@
   function createBlogPostsList() {
     const list = document.createElement("div");
 
-    list.classList.add("list-group", "mx-auto", "pt-5", "col-6");
+    list.classList.add("list-group", "mx-auto", "col-6");
 
     return list;
   }

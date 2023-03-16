@@ -32,7 +32,7 @@
     const commentTitle = document.createElement("h2");
     const commentText = document.createElement("p");
 
-    comment.classList.add("card", "mt-1");
+    comment.classList.add("card", "mt-2");
     commentBody.classList.add("card-body");
     commentTitle.classList.add("card-title");
     commentText.classList.add("card-text");
