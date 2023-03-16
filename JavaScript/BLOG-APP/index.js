@@ -15,7 +15,7 @@
     const content = document.createElement("p");
 
     link.classList.add("list-group-item", "p-3", "list-group-item-action");
-    link.href = "#";
+    link.href = `post.html?id=${blogItem.id}`;
     link.setAttribute("id", blogItem.id);
     headerWrapper.classList.add("w-100", "d-flex", "justify-content-between");
     header.classList.add("mb-1", "col-5", "text-truncate");
@@ -88,7 +88,7 @@
         mode: "cors",
         headers: {
           Authorization:
-            "Bearer *insert your key here*",
+            "Bearer f49818503f7504c29d0efc852590e982ee3761a2b64ee247764c073b5a4ee583",
         },
       }
     );
@@ -107,7 +107,7 @@
         mode: "cors",
         headers: {
           Authorization:
-            "Bearer *insert your key here*",
+            "Bearer f49818503f7504c29d0efc852590e982ee3761a2b64ee247764c073b5a4ee583",
         },
       }
     );
