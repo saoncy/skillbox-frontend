@@ -1,6 +1,6 @@
 (() => {
   function createBlogPostsList() {
-    const list = document.createElement('ul');
+    const list = document.createElement('div');
 
     list.classList.add('list-group', 'mx-auto', 'pt-5', 'col-6');
 
@@ -32,11 +32,40 @@
     return link;
   }
 
+  function createPaginationButtonGroup(prev, next) {
+    const pagination = document.createElement('ul');
+    const prevButton = createPaginationButton(prev, 'Previous');
+    const nextButton = createPaginationButton(next, 'Next');
+
+    pagination.classList.add('pagination', 'mt-2', 'justify-content-center');
+
+    pagination.append(prevButton);
+    pagination.append(nextButton);
+
+    return pagination;
+  }
+
+  function createPaginationButton(link, text) {
+    const buttonWrapper = document.createElement('li');
+    const pageLink = document.createElement('a');
+
+    buttonWrapper.classList.add('page-item', 'col-3', 'text-center');
+    pageLink.classList.add('page-link');
+    pageLink.href = link;
+    pageLink.textContent = `${text} page`;
+
+    buttonWrapper.append(pageLink);
+
+    return buttonWrapper;
+  }
+
   async function createBlogApp() {
     const app = document.getElementById('blog-app');
     const blogList = createBlogPostsList();
+    const pagination = createPaginationButtonGroup('#', '#');
 
     app.append(blogList);
+    app.append(pagination);
   }
 
   window.createBlogApp = createBlogApp;
