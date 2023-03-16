@@ -53,6 +53,7 @@
     pageLink.classList.add("page-link");
     pageLink.href = `index.html?page=${link}`;
     pageLink.textContent = `${text} page`;
+    if (link === 0) pageLink.classList.add('disabled');
 
     buttonWrapper.append(pageLink);
 
@@ -68,7 +69,7 @@
       : 1;
     const posts = await getBlogPostsList(pageNumber);
     const pagination = createPaginationButtonGroup(
-      pageNumber <= 1 ? 1 : pageNumber - 1,
+      pageNumber <= 0 ? 1 : pageNumber - 1,
       pageNumber + 1
     );
 
