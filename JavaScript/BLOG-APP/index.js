@@ -53,7 +53,7 @@
     pageLink.classList.add("page-link");
     pageLink.href = `index.html?page=${link}`;
     pageLink.textContent = `${text} page`;
-    if (link === 0) pageLink.classList.add('disabled');
+    if (link === 0) pageLink.classList.add("disabled");
 
     buttonWrapper.append(pageLink);
 
@@ -88,8 +88,7 @@
       {
         mode: "cors",
         headers: {
-          Authorization:
-            "Bearer *insert your key here*",
+          Authorization: "Bearer *insert your key here*",
         },
       }
     );
@@ -107,8 +106,7 @@
       {
         mode: "cors",
         headers: {
-          Authorization:
-            "Bearer *insert your key here*",
+          Authorization: "Bearer *insert your key here*",
         },
       }
     );

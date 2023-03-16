@@ -4,7 +4,7 @@
     const postBody = document.createElement("div");
     const postTitle = document.createElement("h1");
     const postText = document.createElement("p");
-    const postLinkBack = document.createElement('a');
+    const postLinkBack = document.createElement("a");
     const postObject = await getBlogPostById(id);
 
     post.classList.add("card", "mx-auto", "col-6");
@@ -16,7 +16,7 @@
     postTitle.textContent = postObject.title;
     postText.textContent = postObject.body;
     postLinkBack.textContent = "Return to the beginning";
-    postLinkBack.href = 'index.html';
+    postLinkBack.href = "index.html";
 
     postBody.append(postTitle);
     postBody.append(postText);
@@ -27,15 +27,15 @@
   }
 
   function createCommentsListElement(commentObj) {
-    const comment = document.createElement('div');
-    const commentBody = document.createElement('div');
+    const comment = document.createElement("div");
+    const commentBody = document.createElement("div");
     const commentTitle = document.createElement("h2");
     const commentText = document.createElement("p");
 
-    comment.classList.add('card', 'mt-1');
-    commentBody.classList.add('card-body');
-    commentTitle.classList.add('card-title');
-    commentText.classList.add('card-text');
+    comment.classList.add("card", "mt-1");
+    commentBody.classList.add("card-body");
+    commentTitle.classList.add("card-title");
+    commentText.classList.add("card-text");
 
     commentTitle.textContent = commentObj.name;
     commentText.textContent = commentObj.body;
@@ -48,33 +48,32 @@
   }
 
   function createCommentsList() {
-    const commentSection = document.createElement('div');
-    const title = document.createElement('h1');
+    const commentSection = document.createElement("div");
+    const title = document.createElement("h1");
 
-    commentSection.classList.add('mx-auto', 'col-6', 'mt-3');
-    commentSection.setAttribute('id', 'comments-section');
-    title.textContent = 'Comments';
+    commentSection.classList.add("mx-auto", "col-6", "mt-3");
+    commentSection.setAttribute("id", "comments-section");
+    title.textContent = "Comments";
 
     commentSection.append(title);
 
     return commentSection;
   }
 
-
   async function addCommentsToPage(postID) {
-    const container = document.getElementById('comments-section');
+    const container = document.getElementById("comments-section");
     const comments = await getBlogPostCommentsById(postID);
-    console.log(comments)
+    console.log(comments);
 
     if (comments.length) {
-      comments.forEach(el => {
+      comments.forEach((el) => {
         container.append(createCommentsListElement(el));
       });
     } else {
-      const msg = document.createElement('p');
+      const msg = document.createElement("p");
 
-      msg.classList.add('text-info', 'fs-5');
-      msg.textContent = 'No comments';
+      msg.classList.add("text-info", "fs-5");
+      msg.textContent = "No comments";
 
       container.append(msg);
     }
@@ -105,12 +104,15 @@
   }
 
   async function getBlogPostCommentsById(id) {
-    const response = await fetch(`https://gorest.co.in/public/v2/posts/${id}/comments`, {
-      mode: "cors",
-      headers: {
-        Authorization: "Bearer *insert your key here*",
-      },
-    });
+    const response = await fetch(
+      `https://gorest.co.in/public/v2/posts/${id}/comments`,
+      {
+        mode: "cors",
+        headers: {
+          Authorization: "Bearer *insert your key here*",
+        },
+      }
+    );
     const blogComments = await response.json();
 
     return blogComments;
