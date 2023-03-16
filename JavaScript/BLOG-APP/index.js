@@ -89,7 +89,7 @@
         mode: "cors",
         headers: {
           Authorization:
-            "Bearer f49818503f7504c29d0efc852590e982ee3761a2b64ee247764c073b5a4ee583",
+            "Bearer *insert your key here*",
         },
       }
     );
@@ -108,7 +108,7 @@
         mode: "cors",
         headers: {
           Authorization:
-            "Bearer f49818503f7504c29d0efc852590e982ee3761a2b64ee247764c073b5a4ee583",
+            "Bearer *insert your key here*",
         },
       }
     );
