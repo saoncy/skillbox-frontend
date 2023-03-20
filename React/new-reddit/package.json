@@ -6,7 +6,7 @@
   "scripts": {
     "build:dev": "env NODE_ENV=development webpack --config webpack.config.js",
     "build:prod": "env NODE_ENV=production webpack --config webpack.config.js",
-    "dev": "env NODE_ENV=development webpack-dev-server",
+    "dev": "env NODE_ENV=development node ./bin/dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,16 +15,21 @@
   "dependencies": {
     "express": "^4.18.2",
     "nodemon": "^2.0.21",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@hot-loader/react-dom": "^17.0.2",
+    "clean-webpack-plugin": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
+    "react-hot-loader": "^4.13.1",
     "ts-loader": "^9.4.2",
     "typescript": "^5.0.2",
     "webpack": "^5.76.2",
     "webpack-cli": "^5.0.1",
+    "webpack-dev-middleware": "^6.0.2",
     "webpack-dev-server": "^4.13.1",
+    "webpack-hot-middleware": "^2.25.3",
     "webpack-node-externals": "^3.0.0"
   }
 }
