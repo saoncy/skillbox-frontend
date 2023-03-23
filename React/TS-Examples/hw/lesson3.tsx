@@ -1,4 +1,4 @@
-import React from 'react';
+import React from '../../new-reddit/node_modules/@types/react';
 
 // 1.  Напишите тип функции, конкатенирующей две строки
 // concat('Hello', 'World') -> Hello World;
