@@ -15,13 +15,10 @@ type FnType = (left: string, right: string) => string;
 interface IHomeTask {
   howIDoIt: string,
   simeArray: (string | number)[],
+  withData?: IHomeTask[]
 }
 
-interface ITask extends IHomeTask {
-  withData: IHomeTask[]
-}
-
-const MyHometask: ITask = {
+const MyHometask: IHomeTask = {
   howIDoIt: "I Do It Wel",
   simeArray: ["string one", "string two", 42],
   withData: [{ howIDoIt: "I Do It Wel", simeArray: ["string one", 23] }],
