@@ -6,5 +6,4 @@ import { StarWarsNameClass } from '../shared/StarWarsNameClass'
 
 window.addEventListener('load', () => {
   ReactDOM.hydrate(<Header />, document.getElementById('react-root'));
-  ReactDOM.hydrate(<StarWarsNameClass />, document.getElementById('react-root'));
 });
