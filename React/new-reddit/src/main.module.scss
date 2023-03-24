@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+$global-fs: 14px;
+$global-lh: 16px;
+$font: 'Roboto', sans-serif;
+
+
+$black: #333;
+$orange: #cc6633;
+$green: #a4cc33;
+$white-lighness: 100%;
+$white: hsl(0, 0%, $white-lighness);
+$gray-f4: hsl(0, 0%, $white-lighness - 4%);
+$gray-f3: hsl(0, 0%, $white-lighness - 5%);
+$gray-d9: hsl(0, 0%, $white-lighness - 15%);
+$gray-c4: hsl(0, 0%, $white-lighness - 23%);
+$gray-99: hsl(0, 0%, $white-lighness - 40%);
+$gray-66: hsl(0, 0%, $white-lighness - 60%);
+
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: $gray-f4;
+  font-size: $global-fs;
+  line-height: $global-lh;
+  font-family: $font;
+}
+
+* {
+  color: $black;
+  box-sizing: border-box;
+  -webkit-fot-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

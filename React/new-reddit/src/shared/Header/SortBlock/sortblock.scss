@@ -1,0 +1,17 @@
+@import '../../../main.module.scss';
+
+.sortBlock {
+  margin: 0 0 20px;
+  padding: 11px 20px;
+  border-radius: 7px;
+  background-color: $white;
+}
+
+@media all and (min-width: 1024px) {
+  .sortBlock {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+  }
+}

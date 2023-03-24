@@ -1,0 +1,16 @@
+@import '../../main.module.scss';
+
+@media all and (min-width: 1024px) {
+  .header {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 40px;
+  }
+}
+
+@media all and (min-width: 1540px) {
+  .header {
+    padding: 67px 0;
+  }
+}
