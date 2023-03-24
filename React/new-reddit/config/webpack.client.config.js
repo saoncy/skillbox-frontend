@@ -55,7 +55,7 @@ module.exports = {
       {
         test: GLOBAL_SCSS_REGEXP,
         use: [
-          "style-loader", "sass-loader"
+          "style-loader", "css-loader", "sass-loader"
         ]
       }
     ],

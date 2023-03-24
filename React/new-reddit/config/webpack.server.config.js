@@ -42,7 +42,7 @@ module.exports = {
       {
         test: GLOBAL_SCSS_REGEXP,
         use: [
-          "sass-loader"
+          "css-loader", "sass-loader"
         ]
       }
     ],
