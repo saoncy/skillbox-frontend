@@ -1,5 +1,5 @@
-import React from "react";
-import { uniqueNamesGenerator, adjectives, starWars } from 'unique-names-generator';
+import React from "../../new-reddit/node_modules/@types/react";
+import { uniqueNamesGenerator, starWars } from '../../new-reddit/node_modules/unique-names-generator';
 import styles from './starWarsNameClass.module.scss';
 
 interface IStarWarsClassState {
