@@ -97,3 +97,9 @@
     -webkit-line-clamp: 1;
   }
 }
+
+@media all and (min-width: 1540px) {
+  .textContent {
+    flex-basis: 672px;
+  }
+}
