@@ -1,0 +1,75 @@
+@import '../../../../main.module.scss';
+
+.controls {
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.likesCounter {
+  * + * {
+    padding: 0 0 0 4px;
+  }
+}
+
+.likesValue {
+  color: $gray-c4;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.likesDown {
+
+  svg {
+    transform: rotate(180deg);
+  }
+}
+
+.commentsButton {
+  * {
+    color: $gray-c4;
+  }
+}
+
+.commentsCount {
+  padding: 0 0 0 6px;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+
+  *:not(:last-child) {
+    margin-right: 15px;
+  }
+}
+
+.shareButton {
+  max-width: 20px;
+  max-height: 20px;
+}
+
+.saveButton {
+  max-width: 20px;
+  max-height: 20px;
+}
+
+@media all and (min-width: 1024px) {
+  .likesCounter {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .commentsButton {
+    display: none;
+  }
+
+  .actions {
+    display: none;
+  }
+}
