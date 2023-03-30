@@ -34,5 +34,15 @@
 @media all and (min-width: 1540px) {
   .card {
     padding: 0 60px;
+    max-height: 147px;
+    cursor: pointer;
+
+    &:hover {
+      outline: 1px solid $gray-d9;
+    }
+
+    &:focus-within {
+      outline: 1px solid $gray-d9;
+    }
   }
 }

@@ -75,7 +75,6 @@
 
   .metaData {
     flex-flow: row-reverse nowrap;
-    justify-content: flex-end;
     font-size: 14px;
     line-height: 16px;
   }
@@ -96,10 +95,22 @@
   .postLink {
     -webkit-line-clamp: 1;
   }
+
+  .title {
+    padding: 0;
+  }
 }
 
 @media all and (min-width: 1540px) {
   .textContent {
     flex-basis: 672px;
+  }
+
+  .postLink:hover {
+    color: $orange;
+  }
+
+  .userLink:hover {
+    text-decoration: underline;
   }
 }
