@@ -44,6 +44,7 @@ export function GenericList({ list }: IMyListProps) {
 }
 
 /**
+ * App.tsx
 import React from "react";
 import './main.module.scss'
 import { hot } from "react-hot-loader/root";
@@ -84,5 +85,4 @@ function AppComponent() {
 }
 
 export const App = hot(() => <AppComponent /> );
-
  */
