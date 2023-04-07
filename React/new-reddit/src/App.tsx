@@ -13,16 +13,6 @@ function AppComponent() {
       <Header />
       <Content>
         <CardsList />
-        <div style={{ padding: 50 }}>
-          <br />
-          <Dropdown
-          onClose={() => console.log('closed')}
-          onOpen={() => console.log('opened')}
-          isOpen={false}
-          button={ <button>Test</button> }>
-            <CardsList />
-          </Dropdown>
-        </div>
       </Content>
     </Layout>
   );

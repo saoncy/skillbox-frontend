@@ -1,0 +1,21 @@
+@import '../../../../../main.module.scss';
+
+.listItem {
+  padding: 10px 0;
+  height: 38px;
+  cursor: pointer;
+  text-align: left;
+  vertical-align: middle;
+  color: $gray-99;
+  transition: color .3s ease;
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid $gray-d9;
+  }
+}
+
+@media (max-width: 1024px) {
+  .listItem:nth-child(1), .listItem:nth-child(2), .listItem:nth-child(4) {
+    display: none
+  }
+}
