@@ -19,6 +19,19 @@ function pipe<U>(...fns: Function[]) {
     fns.reduce((previousValue, fn) => fn(previousValue), initialValue)
 }
 
+type Fn = (...args: any) => any;
+
+type lastReturnType<F extends Fn[]> = F extends [...any, infer L extends Fn] ? ReturnType<L> : never;
+
+function compose2<F extends Fn[]>(initValue: any, ...fns: F) {
+  return fns.reduceRight((acc, fn) => fn(acc), initValue);
+}
+
+
+function pipe2<F extends Fn[]>(initValue: any, ...fns: F) {
+  return fns.reduce((acc, fn) => fn(acc), initValue) as lastReturnType<F>;
+}
+
 function pick<K extends string>(prop: K) {
   return <O extends Record<K, any>>(obj: O) => obj[prop];
 }
@@ -32,8 +45,11 @@ function isEqual<T>(left: T) {
 const comments = [{ id: 22, text: 'text One' }, { id: 44, text: 'text Two' }];
 
 const createFilterBy = (prop: string) => (id: number) => pipe(pick(prop), isEqual(id), cond);
+const createFilterBy2 = (prop: string) => (value: any) => pipe2(prop, pick, isEqual(value), cond);
 const filterWithID = createFilterBy('id');
+const filterWithID2 = createFilterBy2('id');
 const filterWithId22 = createFilterBy('id')(22);
+const filterWithId222 = createFilterBy2('id')(22);
 const filterByValue = createFilterBy('value');
 
 const filteredComments = comments.filter(filterWithID(22));
