@@ -18,6 +18,10 @@
   svg {
     margin-right: 6px;
     min-width: 14px;
+
+    path {
+      transition: fill .3s ease;
+    }
   }
 }
 
