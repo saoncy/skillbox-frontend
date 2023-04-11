@@ -1,6 +1,8 @@
 @import '../../../../../main.module.scss';
 
 .listItem {
+  display: flex;
+  align-items: center;
   padding: 10px 0;
   height: 38px;
   cursor: pointer;
@@ -11,6 +13,11 @@
 
   &:not(:last-of-type) {
     border-bottom: 1px solid $gray-d9;
+  }
+
+  svg {
+    margin-right: 6px;
+    min-width: 14px;
   }
 }
 
@@ -25,6 +32,10 @@
   .listItem {
     &:hover {
       color: $orange;
+
+      svg path {
+        fill: $orange;
+      }
     }
   }
 }
