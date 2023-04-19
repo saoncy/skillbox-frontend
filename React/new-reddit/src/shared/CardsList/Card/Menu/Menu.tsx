@@ -17,7 +17,7 @@ export function Menu() {
           </button>
         }
       >
-        <MenuList />
+        <MenuList postID={'1234'} />
       </Dropdown>
     </div>
   );
